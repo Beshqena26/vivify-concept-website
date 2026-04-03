@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATL მარკეტინგი & ციფრული — Vivify Concept</title>
+  <meta name="description" content="Vivify Concept - ATL მარკეტინგი, ციფრული კამპანიები, სოციალური მედიის მართვა, კონტენტ მარკეტინგი, ინფლუენსერ მარკეტინგი, ბრენდინგი, ვიდეო პროდაქშენი.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="theme-color" content="#327FFC">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .atl-hero-split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .atl-hero-text h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; }
+    .atl-hero-text p { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 28px; max-width: 520px; }
+    .atl-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .atl-metric-box {
+      background: linear-gradient(135deg, #327FFC 0%, #1a5fd4 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(50,127,252,0.25);
+    }
+    .atl-metric-box .metric-value { font-size: 4rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+    .atl-metric-box .metric-label { font-size: 1.15rem; opacity: 0.9; margin-bottom: 24px; }
+    .atl-metric-box .metric-sub { font-size: 0.88rem; opacity: 0.7; line-height: 1.6; }
+    .atl-metric-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .atl-metric-chips .chip { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.25); font-size: 0.78rem; }
+
+    /* Sticky split "What's included" */
+    .atl-included { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; }
+    .atl-included-left { position: sticky; top: 100px; }
+    .atl-included-left h2 { font-size: 2rem; margin-bottom: 16px; }
+    .atl-included-left p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
+    .atl-included-right { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* Pricing section anchors */
+    .pricing-anchor { scroll-margin-top: 80px; }
+
+    /* Section numbering */
+    .section-number { font-size: 0.82rem; font-weight: 700; color: #327FFC; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+
+    /* Pricing note */
+    .pricing-note { text-align: center; font-size: 0.88rem; color: var(--gray-500); max-width: 600px; margin: 32px auto 0; line-height: 1.7; }
+
+    /* Video production partnership */
+    .partnership-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gray-100); padding: 8px 18px; border-radius: 100px; font-size: 0.82rem; font-weight: 600; color: var(--gray-600); margin-top: 16px; }
+    .partnership-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #327FFC; }
+
+    @media (max-width: 900px) {
+      .atl-hero-split { grid-template-columns: 1fr; gap: 32px; }
+      .atl-hero-text h1 { font-size: 2rem; }
+      .atl-included { grid-template-columns: 1fr; gap: 32px; }
+      .atl-included-left { position: static; }
+      .atl-included-right { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">Vivify<small>Concept</small></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">მთავარი</a>
+        <a href="about.html">ჩვენ შესახებ</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">სერვისები <span class="arrow">&#9660;</span></a>
+          <div class="dropdown-menu">
+            <a href="atl.html">ATL მარკეტინგი & ციფრული</a>
+            <a href="btl.html">BTL მარკეტინგი რითეილში</a>
+            <a href="horeca.html">HORECA პროექტები</a>
+            <a href="web-services.html">ვებ სერვისები</a>
+          </div>
+        </div>
+        <a href="portfolio.html">პორტფოლიო</a>
+        <a href="blog.html">ბლოგი</a>
+        <a href="testimonials.html">შეფასებები</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-blue btn-sm">კონტაქტი</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="მენიუ"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-head" style="padding: 180px 0 120px; text-align: left;">
+    <div class="container">
+      <div class="grid-2" style="gap: 48px;">
+        <div class="anim-left" style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="label" style="color: #327FFC;">ATL მარკეტინგი</span>
+          <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); letter-spacing: -2px; margin-bottom: 20px;">ციფრული სივრცის სრული მართვა</h1>
+          <p style="font-size: 1.15rem; line-height: 1.8; max-width: none; margin: 0; color: var(--gray-700);">სტრატეგიიდან კონტენტამდე, რეკლამიდან ანალიტიკამდე — ერთი გუნდი, რომელიც თქვენს ბრენდს ციფრულ სამყაროში ზრდის.</p>
+          <div style="margin-top: 32px; display: flex; gap: 14px;">
+            <a href="#packages" class="btn btn-blue btn-lg">პაკეტები & ფასები &#8595;</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">კონსულტაცია</a>
+          </div>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=800&h=1000&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.1);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM > SOLUTION -->
+  <section>
+    <div class="container">
+      <div class="split-section">
+        <div class="anim-left">
+          <span class="label">რატომ ATL</span>
+          <h2>ციფრული მარკეტინგი აღარ არის არჩევანი — აუცილებლობაა</h2>
+          <p style="margin: 16px 0; line-height: 1.8;">ბრენდები, რომლებიც ციფრულ სივრცეში არ არიან აქტიურები, კარგავენ აუდიტორიას ყოველდღიურად. Above The Line (ATL) მარკეტინგი მოიცავს ფართო აუდიტორიაზე მიმართულ კამპანიებს — სოციალური მედიიდან ციფრულ რეკლამამდე.</p>
+          <p style="margin-bottom: 24px;">ჩვენი მონაცემებზე დაფუძნებული მიდგომა უზრუნველყოფს, რომ ყოველი ინვესტიცია გაზომვადი შედეგით დაბრუნდეს: მეტი ცნობადობა, მეტი ჩართულობა, მეტი გაყიდვა.</p>
+          <a href="contact.html" class="btn btn-blue">დაიწყეთ ახლა &rarr;</a>
+        </div>
+        <div class="anim-right">
+          <div class="svc-img" style="min-height: 380px; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 24px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT'S INCLUDED — Sticky left + val-cards right -->
+  <section style="background: var(--gray-50);">
+    <div class="container">
+      <div class="atl-included">
+        <div class="atl-included-left anim-left">
+          <span class="label">სერვისები</span>
+          <h2>რას მოიცავს</h2>
+          <p>ციფრული მარკეტინგის ყველა კომპონენტი ერთ სერვისში — სტრატეგიიდან შედეგის გაზომვამდე.</p>
+          <a href="contact.html" class="btn btn-blue" style="margin-top: 24px;">მოგვწერეთ &rarr;</a>
+        </div>
+        <div class="atl-included-right">
+          <div class="val-card anim">
+            <div class="val-icon">&#128200;</div>
+            <h3>სტრატეგია & ბრენდინგი</h3>
+            <p>ბრენდის პოზიციონირება, მესიჯინგი, ვიზუალური იდენტობა და ბრენდ გაიდლაინები.</p>
+          </div>
+          <div class="val-card anim delay-1">
+            <div class="val-icon">&#127909;</div>
+            <h3>ფოტო & ვიდეო პროდაქშენი</h3>
+            <p>პროფესიონალური ფოტო და ვიდეო კონტენტი სოციალური მედიისა და რეკლამისთვის.</p>
+          </div>
+          <div class="val-card anim delay-2">
+            <div class="val-icon">&#128241;</div>
+            <h3>სოციალური მედიის მართვა</h3>
+            <p>Facebook, Instagram, LinkedIn, TikTok — დაგეგმვა, შექმნა, გამოქვეყნება და ანალიტიკა.</p>
+          </div>
+          <div class="val-card anim">
+            <div class="val-icon">&#128221;</div>
+            <h3>კონტენტ მარკეტინგი</h3>
+            <p>ბლოგ პოსტები, სტატიები, ინფოგრაფიკა — კონტენტი, რომელიც აუდიტორიას იზიდავს.</p>
+          </div>
+          <div class="val-card anim delay-1">
+            <div class="val-icon">&#128640;</div>
+            <h3>ციფრული რეკლამა</h3>
+            <p>Google Ads, Meta Ads, TikTok Ads — ტარგეტირებული კამპანიები მაქსიმალური ROI-სთვის.</p>
+          </div>
+          <div class="val-card anim delay-2">
+            <div class="val-icon">&#127775;</div>
+            <h3>ინფლუენსერ მარკეტინგი</h3>
+            <p>ინფლუენსერების შერჩევა, კამპანიის დაგეგმვა, განხორციელება და შედეგების ანალიზი.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROCESS — 4 Steps -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="label">პროცესი</span>
+        <h2>როგორ ვმუშაობთ</h2>
+        <p>გამჭვირვალე, სტრუქტურირებული პროცესი — შედეგზე ორიენტირებული.</p>
+      </div>
+      <div class="steps">
+        <div class="step anim">
+          <div class="step-num">01</div>
+          <h3>ბრიფინგი</h3>
+          <p>ვისმენთ თქვენს მიზნებს, ვაანალიზებთ ბაზარს, კონკურენტებს და სამიზნე აუდიტორიას.</p>
+        </div>
+        <div class="step anim delay-1">
+          <div class="step-num">02</div>
+          <h3>სტრატეგია</h3>
+          <p>ვქმნით დეტალურ მარკეტინგულ გეგმას კონკრეტული KPI-ებით და კალენდარით.</p>
+        </div>
+        <div class="step anim delay-2">
+          <div class="step-num">03</div>
+          <h3>კრეატივი</h3>
+          <p>ვამზადებთ კონტენტს, ვიზუალებს, ვიდეოებს და კამპანიის მასალებს.</p>
+        </div>
+        <div class="step anim delay-3">
+          <div class="step-num">04</div>
+          <h3>ოპტიმიზაცია</h3>
+          <p>ვზომავთ შედეგებს, ვოპტიმიზირებთ კამპანიებს და ვაწვდით დეტალურ ანგარიშს.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOCIAL MEDIA PACKAGES -->
+  <section id="packages" class="pricing-anchor" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">01 — სოციალური მედია</span>
+        <h2>Social Media პაკეტები</h2>
+        <p>აირჩიეთ თქვენთვის შესაფერისი სოციალური მედიის მართვის პაკეტი.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card anim">
+          <div class="price-name">Vivify Start</div>
+          <div class="price-amount">2,000 ₾</div>
+          <p class="price-desc">8 პოსტი x 4 ვიდეო / თვეში</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> პროფილის სტრატეგიის შემუშავება</li>
+            <li><span class="check">&#10003;</span> თემატური კატეგორიების დაგეგმვა</li>
+            <li><span class="check">&#10003;</span> საკვალიფიკაციო მასალების რედაქტირება</li>
+            <li><span class="check">&#10003;</span> მონიტორინგის აქტივობა</li>
+            <li><span class="check">&#10003;</span> 8 სტატიკური კონტენტი</li>
+            <li><span class="check">&#10003;</span> 4 ვიდეო რილსი (non production)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">აირჩიე პაკეტი &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1">
+          <div class="price-badge">პოპულარული</div>
+          <div class="price-name">Vivify Flow</div>
+          <div class="price-amount">3,500 ₾</div>
+          <p class="price-desc">16 პოსტი x 6 ვიდეო / თვეში</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> პროფილის სტრატეგიის შემუშავება</li>
+            <li><span class="check">&#10003;</span> საკვალიფიკაციო მასალების რეალიზაცია</li>
+            <li><span class="check">&#10003;</span> მონიტორინგის აქტივობა</li>
+            <li><span class="check">&#10003;</span> კატალოგური თემა შეთავაზება</li>
+            <li><span class="check">&#10003;</span> 16 სტატიკური კონტენტი</li>
+            <li><span class="check">&#10003;</span> 4 მრავალსლაიდიანი კონტენტი</li>
+            <li><span class="check">&#10003;</span> 6 ვიდეო რილსი (non production)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-blue">აირჩიე პაკეტი &rarr;</a>
+        </div>
+        <div class="price-card anim delay-2">
+          <div class="price-name">Vivify Drive</div>
+          <div class="price-amount">5,500 ₾</div>
+          <p class="price-desc">20 პოსტი x 8 ვიდეო / თვეში</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> პროფილის სტრატეგიის შემუშავება</li>
+            <li><span class="check">&#10003;</span> პროფესიონალური კონტენტის შეტანა</li>
+            <li><span class="check">&#10003;</span> მონიტორინგის აქტივობა და რეპორტი</li>
+            <li><span class="check">&#10003;</span> კატალოგური და ვიზუალური თემები</li>
+            <li><span class="check">&#10003;</span> 8 სტატიკური კონტენტი</li>
+            <li><span class="check">&#10003;</span> 4 მრავალსლაიდიანი კონტენტი</li>
+            <li><span class="check">&#10003;</span> 8 ვიდეო რილსი (non production)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">აირჩიე პაკეტი &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VIDEO CONTENT BUNDLES -->
+  <section id="video-content" class="pricing-anchor">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">02 — ვიდეო კონტენტი</span>
+        <h2>სოციალური მედიის ვიდეო კონტენტი</h2>
+        <p>Instagram / TikTok — მოკლე ფორმატის ვიდეო ბანდლები.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card anim">
+          <div class="price-name">4 ვიდეო</div>
+          <div class="price-amount">1,440 ₾</div>
+          <p class="price-desc">360 ₾ / ვიდეო</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> ვიდეოს გადაღება (ჩვენი ტექნიკით)</li>
+            <li><span class="check">&#10003;</span> მოკლე ფორმატის ვიდეო (Reels / TikTok)</li>
+            <li><span class="check">&#10003;</span> ვიდეო მონტაჟი</li>
+            <li><span class="check">&#10003;</span> Color Grading</li>
+            <li><span class="check">&#10003;</span> მუსიკის / Sound დამატება</li>
+            <li><span class="check">&#10003;</span> Export-ready ფორმატი (9:16)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1">
+          <div class="price-badge">საუკეთესო ფასი</div>
+          <div class="price-name">8 ვიდეო</div>
+          <div class="price-amount">2,640 ₾</div>
+          <p class="price-desc">330 ₾ / ვიდეო — ოპტიმალური არჩევანი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> ვიდეოს გადაღება (ჩვენი ტექნიკით)</li>
+            <li><span class="check">&#10003;</span> მოკლე ფორმატის ვიდეო (Reels / TikTok)</li>
+            <li><span class="check">&#10003;</span> ვიდეო მონტაჟი</li>
+            <li><span class="check">&#10003;</span> Color Grading</li>
+            <li><span class="check">&#10003;</span> მუსიკის / Sound დამატება</li>
+            <li><span class="check">&#10003;</span> Export-ready ფორმატი (9:16)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-blue">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card anim delay-2">
+          <div class="price-name">12 ვიდეო</div>
+          <div class="price-amount">3,600 ₾</div>
+          <p class="price-desc">300 ₾ / ვიდეო — მაქსიმალური დაზოგვა</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> ვიდეოს გადაღება (ჩვენი ტექნიკით)</li>
+            <li><span class="check">&#10003;</span> მოკლე ფორმატის ვიდეო (Reels / TikTok)</li>
+            <li><span class="check">&#10003;</span> ვიდეო მონტაჟი</li>
+            <li><span class="check">&#10003;</span> Color Grading</li>
+            <li><span class="check">&#10003;</span> მუსიკის / Sound დამატება</li>
+            <li><span class="check">&#10003;</span> Export-ready ფორმატი (9:16)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+      </div>
+      <p class="pricing-note">* ფასი დამოკიდებულია სირთულეზე, ლოკაციაზე და გადაღების ხანგრძლივობაზე.</p>
+    </div>
+  </section>
+
+  <!-- 7. BRANDING -->
+  <section id="branding" class="pricing-anchor" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">03 — ბრენდინგი</span>
+        <h2>Design Service / Branding</h2>
+        <p>თქვენი ბრენდის ვიზუალური იდენტობის შექმნა და განვითარება.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card anim">
+          <div class="price-name">Basic Plan</div>
+          <div class="price-amount">1,000 ₾</div>
+          <p class="price-desc">ლოგო და ბაზისური ბრენდინგი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> ლოგოს დიზაინი</li>
+            <li><span class="check">&#10003;</span> მინიმუმ 1 კონცეფცია</li>
+            <li><span class="check">&#10003;</span> ელემენტების ნაკრები</li>
+            <li><span class="check">&#10003;</span> ფერთა პალიტრა</li>
+            <li><span class="check">&#10003;</span> ვექტორული/სტატიკური ფორმატი</li>
+            <li><span class="check">&#10003;</span> 2 უფასო კორექტირება</li>
+            <li><span class="check">&#10003;</span> დედლაინი: 1 კვირა</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">აირჩიე &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1">
+          <div class="price-badge">რეკომენდებული</div>
+          <div class="price-name">Premium Branding</div>
+          <div class="price-amount">3,500 ₾</div>
+          <p class="price-desc">სრული ბრენდინგის პაკეტი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> მოიცავს Basic Plan-ს</li>
+            <li><span class="check">&#10003;</span> ლოგოს დიზაინი</li>
+            <li><span class="check">&#10003;</span> ბიზნესკარტი / სტიკერის ნიმუში</li>
+            <li><span class="check">&#10003;</span> ფერთა პალიტრა & ტიპოგრაფია</li>
+            <li><span class="check">&#10003;</span> პრინტული მასალის დიზაინი</li>
+            <li><span class="check">&#10003;</span> 2 უფასო კორექტირება</li>
+            <li><span class="check">&#10003;</span> დედლაინი: 10 სამუშაო დღე</li>
+          </ul>
+          <a href="contact.html" class="btn btn-blue">აირჩიე &rarr;</a>
+        </div>
+        <div class="price-card anim delay-2">
+          <div class="price-name">Brand Ecosystem</div>
+          <div class="price-amount">6,000 ₾</div>
+          <p class="price-desc">სრული კრეატიული პაკეტი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> სრული კრეატიული პაკეტი</li>
+            <li><span class="check">&#10003;</span> პრინტი მასალები</li>
+            <li><span class="check">&#10003;</span> მერჩანტის დიზაინი</li>
+            <li><span class="check">&#10003;</span> Stationery Design</li>
+            <li><span class="check">&#10003;</span> სოც. მედია ქავერის სისტემა</li>
+            <li><span class="check">&#10003;</span> ბრენდ დეველოპმენტი</li>
+            <li><span class="check">&#10003;</span> ვექტორული/სტატიკური ფორმატი</li>
+            <li><span class="check">&#10003;</span> მრავალჯერი კორექტირება</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">აირჩიე &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. VIDEO PRODUCTION -->
+  <section id="video-production" class="pricing-anchor">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-number">04 — ვიდეო პროდაქშენი</span>
+        <h2>Video Production Services</h2>
+        <p>პროფესიონალური ვიდეო პროდაქშენი ბრენდისთვის — Studio 72-თან პარტნიორობით.</p>
+        <div class="partnership-badge">Studio 72 Official Partner</div>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card anim">
+          <div class="price-name">High Performance Reels</div>
+          <div class="price-amount">400$<small>-დან</small></div>
+          <p class="price-desc">მაღალი ჩართულობის რილსები</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> მაღალი ჩართულობისა და დინამიური კონტენტის შექმნა</li>
+            <li><span class="check">&#10003;</span> ვერტიკალური ვიდეოები, მოკლემეტრაჟული სოც. მედია ფორმატში</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1">
+          <div class="price-badge">პოპულარული</div>
+          <div class="price-name">Professional Production</div>
+          <div class="price-amount">5,000$<small>-დან</small></div>
+          <p class="price-desc">პროფესიონალური ვიდეო პაკეტი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> ხარისხიანი ვიდეო კონტენტი ბიზნესის წარმოსადგენად</li>
+            <li><span class="check">&#10003;</span> პროფესიონალური გადაღება, განათება, ხმის ჩაწერა და მონტაჟი</li>
+          </ul>
+          <a href="contact.html" class="btn btn-blue">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card anim delay-2">
+          <div class="price-name">Premium Cinematic</div>
+          <div class="price-amount">12,000$<small>-დან</small></div>
+          <p class="price-desc">კინემატოგრაფიული პროდაქშენი</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> პრემიუმ ხარისხის იმიჯური ვიდეოები და სარეკლამო რგოლები</li>
+            <li><span class="check">&#10003;</span> სრული პრე-პროდაქშენი, სცენარი, სტორიბორდი და პოსტ-პროდაქშენი</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA -->
+  <section style="background: var(--gray-50); padding-bottom: 0;">
+    <div class="container">
+      <div class="cta-block anim-scale">
+        <h2>არ იცით რომელი პაკეტი შეგეფერებათ?</h2>
+        <p>დაჯავშნეთ უფასო კონსულტაცია — ჩვენი გუნდი დაგეხმარებათ სწორი სტრატეგიისა და პაკეტის არჩევაში.</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-orange btn-lg">უფასო კონსულტაცია &rarr;</a>
+          <a href="tel:+995593382809" class="btn btn-ghost btn-lg">+995 593 38 28 09</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../index.html" class="logo">Vivify<small>Concept</small></a>
+          <p class="footer-desc">ბრენდებს სიცოცხლეს ვანიჭებთ ინოვაციური მარკეტინგული სტრატეგიებით.</p>
+        </div>
+        <div class="footer-col"><h4>გვერდები</h4><a href="../index.html">მთავარი</a><a href="about.html">ჩვენ შესახებ</a><a href="services.html">სერვისები</a><a href="portfolio.html">პორტფოლიო</a></div>
+        <div class="footer-col"><h4>სხვა</h4><a href="blog.html">ბლოგი</a><a href="testimonials.html">შეფასებები</a><a href="faq.html">FAQ</a><a href="contact.html">კონტაქტი</a></div>
+        <div class="footer-col"><h4>კონტაქტი</h4><a href="tel:+995593382809">+995 593 38 28 09</a><a href="mailto:info@vivifyconcept.com">info@vivifyconcept.com</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Vivify Concept. ყველა უფლება დაცულია.</p><p>Creativity That Stands Out</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

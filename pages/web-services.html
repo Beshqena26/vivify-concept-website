@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ვებ სერვისები — Vivify Concept</title>
+  <meta name="description" content="Vivify Concept - UI/UX დიზაინი, ვებ დეველოპმენტი, E-commerce, მობილური აპლიკაციები და custom სისტემები.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <meta name="theme-color" content="#327FFC">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">Vivify<small>Concept</small></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">მთავარი</a>
+        <a href="about.html">ჩვენ შესახებ</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">სერვისები <span class="arrow">&#9660;</span></a>
+          <div class="dropdown-menu">
+            <a href="atl.html">ATL მარკეტინგი & ციფრული</a>
+            <a href="btl.html">BTL მარკეტინგი რითეილში</a>
+            <a href="horeca.html">HORECA პროექტები</a>
+            <a href="web-services.html">ვებ სერვისები</a>
+          </div>
+        </div>
+        <a href="portfolio.html">პორტფოლიო</a>
+        <a href="blog.html">ბლოგი</a>
+        <a href="testimonials.html">შეფასებები</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-blue btn-sm">კონტაქტი</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="მენიუ"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       1. HERO
+       ═══════════════════════════════════ -->
+  <section class="page-head" style="padding: 180px 0 120px; text-align: left;">
+    <div class="container">
+      <div class="grid-2" style="gap: 48px;">
+        <div class="anim-left" style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="label" style="color: #10b981;">ვებ სერვისები</span>
+          <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); letter-spacing: -2px; margin-bottom: 20px;">ციფრული პროდუქტის სრული ციკლი</h1>
+          <p style="font-size: 1.15rem; line-height: 1.8; max-width: none; margin: 0; color: var(--gray-700);">UI/UX დიზაინიდან სრულ დეველოპმენტამდე — ყველაფერი ერთ გუნდში.</p>
+          <div style="margin-top: 32px; display: flex; gap: 14px;">
+            <a href="#websites" class="btn btn-blue btn-lg">პაკეტები &#8595;</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">კონსულტაცია</a>
+          </div>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=1000&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.1);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       2. WHAT WE BUILD — Quick jump cards
+       ═══════════════════════════════════ -->
+  <section style="padding-top: 0; margin-top: -50px; position: relative; z-index: 2;">
+    <div class="container">
+      <div class="grid-4">
+        <a href="#websites" class="svc-nav-card svc-nav-blue anim">
+          <div class="svc-nav-icon">&#128187;</div>
+          <h3>ვებ საიტები</h3>
+          <p>2,500 ₾-დან</p>
+          <span class="svc-nav-arrow">&#8595;</span>
+        </a>
+        <a href="#ecommerce" class="svc-nav-card svc-nav-orange anim delay-1">
+          <div class="svc-nav-icon">&#128722;</div>
+          <h3>E-commerce</h3>
+          <p>9,000 ₾-დან</p>
+          <span class="svc-nav-arrow">&#8595;</span>
+        </a>
+        <a href="#advanced" class="svc-nav-card svc-nav-green anim delay-2">
+          <div class="svc-nav-icon">&#9881;</div>
+          <h3>Custom სისტემები</h3>
+          <p>12,000 ₾-დან</p>
+          <span class="svc-nav-arrow">&#8595;</span>
+        </a>
+        <a href="#mobile" class="svc-nav-card svc-nav-purple anim delay-3">
+          <div class="svc-nav-icon">&#128241;</div>
+          <h3>მობილური აპი</h3>
+          <p>14,000 ₾-დან</p>
+          <span class="svc-nav-arrow">&#8595;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       3. VALUE PROP — Why build with us
+       ═══════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="split-section">
+        <div class="anim-left">
+          <span class="label" style="color: #10b981;">რატომ ჩვენთან</span>
+          <h2>დიზაინი + დეველოპმენტი ერთი გუნდისგან</h2>
+          <p style="margin: 14px 0;">სხვა სააგენტოებისგან განსხვავებით, ჩვენ UI/UX დიზაინს და დეველოპმენტს ერთ ციკლში ვაკეთებთ. შედეგი — თანმიმდევრული პროდუქტი, სწრაფი ვადები და ნაკლები კომუნიკაციური ხარჯი.</p>
+          <p style="margin-bottom: 24px;">ყველა პროექტი მოიცავს ინდივიდუალურ UI/UX დიზაინს, responsive ლეიაუთს, SEO ოპტიმიზაციას და სისტემის ტესტირებას.</p>
+          <div style="display: flex; gap: 12px;">
+            <a href="#websites" class="btn btn-blue btn-sm">ნახე პაკეტები &#8595;</a>
+            <a href="contact.html" class="btn btn-ghost btn-sm">უფასო კონსულტაცია</a>
+          </div>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/3; background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 24px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       4. WHAT'S INCLUDED — Every project gets
+       ═══════════════════════════════════ -->
+  <section style="background: var(--gray-50);">
+    <div class="container">
+      <div class="split-section" style="align-items: flex-start;">
+        <div class="anim-left" style="position: sticky; top: 120px;">
+          <span class="label" style="color: #10b981;">ყველა პროექტში</span>
+          <h2>რას მოიცავს ყველა პაკეტი</h2>
+          <p style="margin-top: 14px;">მიუხედავად პაკეტისა, ეს სტანდარტი ყოველთვის დაცულია.</p>
+          <div style="margin-top: 24px; width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1581291518633-83b4eef1d2f8?w=600&h=400&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 20px;"></div>
+        </div>
+        <div>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="val-card anim" style="text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+              <div class="val-icon" style="margin: 0; flex-shrink: 0; background: #ecfdf5;">&#127912;</div>
+              <div>
+                <h3>ინდივიდუალური UI/UX დიზაინი</h3>
+                <p style="margin-top: 6px;">თემფლეითი არა — თქვენი ბრენდისთვის შექმნილი უნიკალური დიზაინი, wireframe-დან final მოკაპამდე.</p>
+              </div>
+            </div>
+            <div class="val-card anim delay-1" style="text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+              <div class="val-icon" style="margin: 0; flex-shrink: 0; background: #ecfdf5;">&#128241;</div>
+              <div>
+                <h3>Responsive დიზაინი</h3>
+                <p style="margin-top: 6px;">სრული ადაპტაცია ყველა მოწყობილობაზე — მობილური, ტაბლეტი, დესკტოპი.</p>
+              </div>
+            </div>
+            <div class="val-card anim delay-2" style="text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+              <div class="val-icon" style="margin: 0; flex-shrink: 0; background: #ecfdf5;">&#128269;</div>
+              <div>
+                <h3>SEO ოპტიმიზაცია</h3>
+                <p style="margin-top: 6px;">საძიებო სისტემებისთვის ოპტიმიზირებული სტრუქტურა, მეტა ტეგები და სიჩქარე.</p>
+              </div>
+            </div>
+            <div class="val-card anim delay-3" style="text-align: left; display: flex; gap: 20px; align-items: flex-start;">
+              <div class="val-icon" style="margin: 0; flex-shrink: 0; background: #ecfdf5;">&#9889;</div>
+              <div>
+                <h3>Performance ოპტიმიზაცია</h3>
+                <p style="margin-top: 6px;">სწრაფი ჩატვირთვა, ოპტიმიზირებული კოდი და მედია ფაილები.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PROCESS
+       ═══════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="label" style="color: #10b981;">პროცესი</span>
+        <h2>როგორ მუშაობს</h2>
+        <p>გამჭვირვალე პროცესი პირველი შეხვედრიდან გაშვებამდე.</p>
+      </div>
+      <div class="steps">
+        <div class="step anim">
+          <div style="width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=400&h=267&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 16px;"></div>
+          <div class="step-num" style="background: #10b981;">01</div>
+          <h3>ბრიფინგი</h3>
+          <p>ვისმენთ თქვენს მიზნებს, ვაანალიზებთ საჭიროებებს და ვადგენთ სპეციფიკაციას.</p>
+        </div>
+        <div class="step anim delay-1">
+          <div style="width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=267&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 16px;"></div>
+          <div class="step-num" style="background: #10b981;">02</div>
+          <h3>UI/UX დიზაინი</h3>
+          <p>Wireframe, მოკაპები და პროტოტიპი — ვამტკიცებთ დიზაინს დეველოპმენტამდე.</p>
+        </div>
+        <div class="step anim delay-2">
+          <div style="width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=267&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 16px;"></div>
+          <div class="step-num" style="background: #10b981;">03</div>
+          <h3>დეველოპმენტი</h3>
+          <p>ფრონტენდი, ბექენდი, ინტეგრაციები და ტესტირება — სრული ტექნიკური რეალიზაცია.</p>
+        </div>
+        <div class="step anim delay-3">
+          <div style="width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=267&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 16px;"></div>
+          <div class="step-num" style="background: #10b981;">04</div>
+          <h3>გაშვება</h3>
+          <p>ფინალური ტესტირება, დეპლოიმენტი და პროექტის ჩაბარება + მხარდაჭერა.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       5. WEBSITE PACKAGES — Starter + Business
+       ═══════════════════════════════════ -->
+  <section id="websites" style="scroll-margin-top: 80px; background: var(--gray-50);">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" style="color: #10b981;">01 — ვებ საიტები</span>
+        <h2>ვებ საიტის პაკეტები</h2>
+        <p>Landing page-დან სრულფასოვან ბიზნეს საიტამდე.</p>
+      </div>
+      <div class="pricing-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="price-card anim">
+          <div class="price-name">Starter პაკეტი</div>
+          <div class="price-amount">2,500 ₾</div>
+          <p class="price-desc">1-გვერდიანი ვებ საიტი — იდეალური დამწყები ბიზნესისთვის</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: #10b981;">&#10003;</span> ინდივიდუალური UI/UX დიზაინი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> სრული ფრონტენდი და ბექენდი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> Responsive ადაპტაცია</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> საბაზისო SEO სტრუქტურა</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> სისტემის ოპტიმიზაცია</li>
+          </ul>
+          <p style="font-size: 0.82rem; color: var(--gray-500); margin-bottom: 20px;">არ მოიცავს: CMS, გადახდები, ინტეგრაციები</p>
+          <a href="contact.html" class="btn btn-ghost">დაიწყე პროექტი &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1" style="background: linear-gradient(135deg, #10b981, #059669);">
+          <div class="price-badge">პოპულარული</div>
+          <div class="price-name">Business პაკეტი</div>
+          <div class="price-amount">7,500 ₾</div>
+          <p class="price-desc">5-10 გვერდიანი საიტი — ბიზნესის სრული წარმოჩენა</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> სრული UI/UX პროცესი (wireframe + final)</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> სრული ფრონტენდი და ბექენდი</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> Responsive ყველა მოწყობილობაზე</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> CMS / კონტენტის მართვა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> CRM ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> ონლაინ გადახდის ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> SEO სტრუქტურა & ოპტიმიზაცია</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">დაიწყე პროექტი &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       6. E-COMMERCE
+       ═══════════════════════════════════ -->
+  <section id="ecommerce" style="background: var(--gray-50); scroll-margin-top: 80px;">
+    <div class="container">
+      <div class="split-section">
+        <div class="anim-left">
+          <span class="label" style="color: var(--orange);">02 — E-commerce</span>
+          <h2>ონლაინ მაღაზია სრული ფუნქციონალით</h2>
+          <div class="price-amount" style="margin: 12px 0 16px;">9,000 ₾<small>-დან</small></div>
+          <ul class="price-features" style="margin-bottom: 24px;">
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> ონლაინ მაღაზიის UI/UX დიზაინი</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> პროდუქტების კატალოგის არქიტექტურა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> ფილტრაცია, ძებნა და სორტირება</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> კალათა და Checkout სისტემა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> ონლაინ გადახდის ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> შეკვეთების მართვის სისტემა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> CMS / პროდუქტის მართვა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> SEO ოპტიმიზაცია</li>
+          </ul>
+          <a href="contact.html" class="btn btn-orange btn-sm">დაიწყე პროექტი &rarr;</a>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/3; background-image: url('https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&h=600&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 24px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       7. ADVANCED — Custom, Platform, Audit
+       ═══════════════════════════════════ -->
+  <section id="advanced" style="scroll-margin-top: 80px;">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" style="color: #10b981;">03 — მოწინავე გადაწყვეტილებები</span>
+        <h2>Custom სისტემები & პლატფორმები</h2>
+        <p>სტარტაპები, SaaS, CRM, ERP — რთული სისტემების დიზაინი და დეველოპმენტი.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card anim">
+          <div class="price-name">UI/UX აუდიტი + რედიზაინი</div>
+          <div class="price-amount">6,000 ₾<small>-დან</small></div>
+          <p class="price-desc">არსებული საიტის აუდიტი, რედიზაინი და ხელახალი აწყობა</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: #10b981;">&#10003;</span> არსებული საიტის UI/UX აუდიტი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> პრობლემების იდენტიფიკაცია</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> სრული რედიზაინი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> ახალი დეველოპმენტი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> Usability & Performance</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card featured anim delay-1" style="background: linear-gradient(135deg, #10b981, #059669);">
+          <div class="price-badge" style="background: var(--blue);">პოპულარული</div>
+          <div class="price-name">Custom Product Development</div>
+          <div class="price-amount">12,000 ₾<small>-დან</small></div>
+          <p class="price-desc">Web App, UX სტრატეგია, React / Next.js</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> პროდუქტის UX სტრატეგია</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> Web Application UI/UX</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> React / Next.js დეველოპმენტი</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> Backend არქიტექტურა</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> API ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--orange);">&#10003;</span> Admin Panel</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+        <div class="price-card anim delay-2">
+          <div class="price-name">Platform / Management System</div>
+          <div class="price-amount">15,000 ₾<small>-დან</small></div>
+          <p class="price-desc">CRM, ERP, მარკეტპლეისი, ბანკის პლატფორმები</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: #10b981;">&#10003;</span> პლატფორმის UI/UX დიზაინი</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> User flow-ების დაგეგმვა</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> როლები და უფლებები</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> Dashboard-ები & ვიზუალიზაცია</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> Admin Panel</li>
+            <li><span class="check" style="color: #10b981;">&#10003;</span> API ინტეგრაციები</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">შეკვეთა &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       8. MOBILE + MAINTENANCE — Side by side
+       ═══════════════════════════════════ -->
+  <section id="mobile" style="background: var(--gray-50); scroll-margin-top: 80px;">
+    <div class="container">
+      <div class="section-head">
+        <span class="label" style="color: var(--purple);">04 — მობილური & მხარდაჭერა</span>
+        <h2>მობილური აპლიკაციები & Maintenance</h2>
+      </div>
+      <div class="pricing-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="price-card anim">
+          <div class="price-name">Mobile Application</div>
+          <div class="price-amount">14,000 ₾<small>-დან</small></div>
+          <p class="price-desc">iOS & Android — React Native დეველოპმენტი</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> iOS და Android UI/UX დიზაინი</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> React Native დეველოპმენტი</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> Backend / API ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> ავტორიზაცია და მომხმარებლის მართვა</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> Admin Panel ინტეგრაცია</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> Publish-ready მომზადება</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">დაიწყე პროექტი &rarr;</a>
+        </div>
+        <div class="price-card anim delay-1">
+          <div class="price-name">Maintenance / შენარჩუნება</div>
+          <div class="price-amount">300 ₾<small>-დან / თვეში</small></div>
+          <p class="price-desc">მუდმივი ტექნიკური მხარდაჭერა</p>
+          <ul class="price-features">
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> ტექნიკური მხარდაჭერა</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> ბაგების გამოსწორება</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> მინორ დეველოპმენტი</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> სისტემის მონიტორინგი</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> Performance მონიტორინგი</li>
+            <li><span class="check" style="color: var(--purple);">&#10003;</span> უსაფრთხოების განახლება</li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost">დაიწყე &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       9. ADD-ONS
+       ═══════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="split-section" style="align-items: flex-start;">
+        <div class="anim-left" style="position: sticky; top: 120px;">
+          <span class="label" style="color: #10b981;">დამატებითი</span>
+          <h2>Add-ons & გაფართოება</h2>
+          <p style="margin-top: 14px;">გააფართოვეთ ნებისმიერი პაკეტი დამატებითი ფუნქციონალით.</p>
+          <div style="margin-top: 24px; width: 100%; aspect-ratio: 3/2; background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: 20px;"></div>
+        </div>
+        <div>
+          <div class="addon-grid" style="grid-template-columns: 1fr;">
+            <div class="addon-item anim">
+              <span class="addon-name">დამატებითი გვერდები (7-10)</span>
+              <span class="addon-price">+1,000 ₾</span>
+            </div>
+            <div class="addon-item anim delay-1">
+              <span class="addon-name">მრავალენიანობის სისტემა</span>
+              <span class="addon-price">+500 ₾-დან</span>
+            </div>
+            <div class="addon-item anim">
+              <span class="addon-name">გაფართოებული SEO ოპტიმიზაცია</span>
+              <span class="addon-price">+800 ₾</span>
+            </div>
+            <div class="addon-item anim delay-1">
+              <span class="addon-name">Conversion ოპტიმიზაცია</span>
+              <span class="addon-price">+1,200 ₾</span>
+            </div>
+            <div class="addon-item anim">
+              <span class="addon-name">დამატებითი ინტეგრაცია</span>
+              <span class="addon-price">+500 ₾-დან</span>
+            </div>
+            <div class="addon-item anim delay-1">
+              <span class="addon-name">დამატებითი გვერდი</span>
+              <span class="addon-price">+250 ₾ / გვერდი</span>
+            </div>
+            <div class="addon-item anim">
+              <span class="addon-name">ბლოგის / ნიუს სისტემა</span>
+              <span class="addon-price">+600 ₾-დან</span>
+            </div>
+            <div class="addon-item anim delay-1">
+              <span class="addon-name">ინდივიდუალური Admin Panel</span>
+              <span class="addon-price">+1,500 ₾-დან</span>
+            </div>
+            <div class="addon-item anim">
+              <span class="addon-name">ანალიტიკის გამართვა (GA4, Pixel)</span>
+              <span class="addon-price">+400 ₾-დან</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       CTA
+       ═══════════════════════════════════ -->
+  <section style="padding-bottom: 0;">
+    <div class="container">
+      <div class="cta-block anim-scale">
+        <h2>არ იცით რომელი პაკეტი შეგეფერებათ?</h2>
+        <p>დაჯავშნეთ უფასო კონსულტაცია — ერთად შევარჩევთ საუკეთესო გადაწყვეტას თქვენი ბიზნესისთვის.</p>
+        <a href="contact.html" class="btn btn-orange btn-lg">უფასო კონსულტაცია &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../index.html" class="logo">Vivify<small>Concept</small></a>
+          <p class="footer-desc">ბრენდებს სიცოცხლეს ვანიჭებთ ინოვაციური მარკეტინგული სტრატეგიებით.</p>
+        </div>
+        <div class="footer-col"><h4>გვერდები</h4><a href="../index.html">მთავარი</a><a href="about.html">ჩვენ შესახებ</a><a href="services.html">სერვისები</a><a href="portfolio.html">პორტფოლიო</a></div>
+        <div class="footer-col"><h4>სხვა</h4><a href="blog.html">ბლოგი</a><a href="testimonials.html">შეფასებები</a><a href="faq.html">FAQ</a><a href="contact.html">კონტაქტი</a></div>
+        <div class="footer-col"><h4>კონტაქტი</h4><a href="tel:+995593382809">+995 593 38 28 09</a><a href="mailto:info@vivifyconcept.com">info@vivifyconcept.com</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Vivify Concept. ყველა უფლება დაცულია.</p><p>Creativity That Stands Out</p></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
