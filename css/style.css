@@ -71,6 +71,7 @@ img { max-width: 100%; display: block; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 28px;
+  overflow: hidden;
 }
 
 /* =====================
@@ -621,13 +622,6 @@ section { padding: 110px 0; }
   gap: 22px;
 }
 
-/* Prevent grid children from overflowing their cell */
-.grid-2 > *, .grid-3 > *, .grid-4 > *,
-.split-section > *, .steps > *, .pricing-grid > * {
-  min-width: 0;
-  max-width: 100%;
-}
-
 /* --- Service Cards --- */
 .svc-card {
   background: var(--white);
@@ -829,11 +823,6 @@ section { padding: 110px 0; }
   grid-template-columns: 1fr 1.2fr;
   gap: 56px;
   align-items: center;
-  overflow: hidden;
-}
-
-.split-section > * {
-  min-width: 0;
 }
 
 .split-text h2 { margin-bottom: 14px; }
