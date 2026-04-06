@@ -2113,6 +2113,9 @@ section + section { position: relative; }
   .cta-block { padding: 48px 20px; border-radius: var(--radius-lg); }
   .stat-cards { grid-template-columns: 1fr 1fr; }
 
+  /* Portfolio: show overlay always on mobile (no hover) */
+  .port-overlay { opacity: 1; }
+
   /* Page header */
   .page-head { padding: 120px 0 50px !important; }
 
