@@ -47,16 +47,20 @@
   margin: 0; padding: 0; box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
 
 body {
   font-family: 'Noto Sans Georgian', 'Inter', -apple-system, sans-serif;
   background: var(--white);
   color: var(--black);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -2285,6 +2289,12 @@ section + section {
   .hero::before, .hero::after {
     display: none;
   }
+
+  /* Kill horizontal translate animations that cause overflow */
+  .anim-left { transform: translateY(36px); }
+  .anim-left.show { transform: translateY(0); }
+  .anim-right { transform: translateY(36px); }
+  .anim-right.show { transform: translateY(0); }
 
   .hero-grid { grid-template-columns: 1fr; }
 
