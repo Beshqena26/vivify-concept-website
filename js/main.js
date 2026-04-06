@@ -4,6 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Prevent horizontal scroll on mobile ---
+  document.documentElement.style.overflowX = 'hidden';
+  window.scrollTo(0, window.scrollY);
+
   // --- Mobile Nav ---
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
