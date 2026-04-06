@@ -405,30 +405,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // DEBUG: check scroll width vs client width
-    setTimeout(() => {
-      const cw = document.documentElement.clientWidth;
-      const sw = document.documentElement.scrollWidth;
-      const bw = document.body.scrollWidth;
-      const d = document.createElement('div');
-      d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:#fff;padding:16px;font-size:14px;z-index:99999;';
-      d.innerHTML = 'viewport=' + cw + ' | html.scrollWidth=' + sw + ' | body.scrollWidth=' + bw + ' | diff=' + (Math.max(sw,bw) - cw) + 'px';
-
-      // find the widest element
-      let widest = null, maxW = cw;
-      document.querySelectorAll('*').forEach(el => {
-        if (el.scrollWidth > maxW) {
-          maxW = el.scrollWidth;
-          widest = el;
-        }
-      });
-      if (widest) {
-        d.innerHTML += '<br>WIDEST: ' + widest.tagName + '.' + (widest.className||'').split(' ').slice(0,2).join('.') + ' scrollW=' + maxW;
-        widest.style.outline = '4px solid red';
-      }
-      document.body.appendChild(d);
-    }, 2000);
-  </script>
 </body>
 </html>
