@@ -58,10 +58,8 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Single overflow-x: clip on body — the only place we need it.
-     clip works like hidden but doesn't create a scroll container,
-     so it won't fight with iOS Safari's scroll behavior. */
-  overflow-x: clip;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -779,7 +777,7 @@ section { padding: 110px 0; }
 }
 
 .svc-nav-card:hover .svc-nav-arrow {
-  transform: translateX(6px);
+  transform: translateY(-2px);
 }
 
 .svc-nav-blue:hover .svc-nav-arrow { color: #327FFC; }
@@ -968,7 +966,7 @@ section { padding: 110px 0; }
   background: linear-gradient(135deg, var(--blue), var(--blue-dark));
   padding: 68px 0;
   border-radius: var(--radius-xl);
-  margin: 0 28px;
+  margin: 0;
   position: relative;
   overflow: hidden;
   text-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1073,6 +1071,8 @@ section { padding: 110px 0; }
   padding: 44px 0;
   overflow: hidden;
   background: var(--gray-50);
+  position: relative;
+  -webkit-mask-image: -webkit-linear-gradient(left, #000, #000);
 }
 
 .partners-track {
@@ -1166,7 +1166,7 @@ section { padding: 110px 0; }
   content: '';
   position: absolute;
   top: -80px;
-  right: -80px;
+  right: 0;
   width: 300px;
   height: 300px;
   background: radial-gradient(circle, rgba(50,127,252,0.25), transparent 70%);
@@ -1177,7 +1177,7 @@ section { padding: 110px 0; }
   content: '';
   position: absolute;
   bottom: -60px;
-  left: -60px;
+  left: 0;
   width: 250px;
   height: 250px;
   background: radial-gradient(circle, rgba(253,99,25,0.15), transparent 70%);
@@ -1420,7 +1420,7 @@ section { padding: 110px 0; }
 }
 
 .val-card[style*="display: flex"] { transition: all 0.4s var(--ease); cursor: default; }
-.val-card[style*="display: flex"]:hover { transform: translateX(6px); border-color: var(--blue-200); }
+.val-card[style*="display: flex"]:hover { transform: translateY(-4px); border-color: var(--blue-200); }
 
 .val-icon {
   width: 60px;
@@ -1954,10 +1954,11 @@ section + section { position: relative; }
     z-index: 999;
     overflow-y: auto;
     transform: translateX(100%);
+    visibility: hidden;
     will-change: transform;
   }
 
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open { transform: translateX(0); visibility: visible; }
   .nav-toggle { display: flex; z-index: 1001; }
 
   .dropdown-menu {
