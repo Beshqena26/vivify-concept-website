@@ -77,10 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Portfolio Filters ---
+  const portItems = document.querySelectorAll('.portfolio-grid .port-item');
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      portItems.forEach(item => {
+        const cats = (item.dataset.cat || '').split(' ');
+        if (filter === 'all' || cats.includes(filter)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
 
