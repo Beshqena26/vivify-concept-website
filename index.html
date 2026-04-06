@@ -406,17 +406,24 @@
 
   <script src="js/main.js"></script>
   <script>
-    // DEBUG: find overflow element
-    document.addEventListener('DOMContentLoaded', () => {
+    // DEBUG: find overflow — shows results on screen
+    setTimeout(() => {
       const w = document.documentElement.clientWidth;
+      const results = [];
       document.querySelectorAll('*').forEach(el => {
         const r = el.getBoundingClientRect();
-        if (r.right > w + 1 || r.left < -1) {
+        if (r.right > w + 2) {
           el.style.outline = '3px solid red';
-          console.log('OVERFLOW:', r.right - w, el.tagName, el.className, el.id, r.right, r.left);
+          results.push(el.tagName + '.' + el.className.split(' ')[0] + ' → right:' + Math.round(r.right) + ' (over by ' + Math.round(r.right - w) + 'px)');
         }
       });
-    });
+      if (results.length) {
+        const d = document.createElement('div');
+        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:#fff;padding:12px;font-size:12px;z-index:99999;max-height:40vh;overflow:auto;';
+        d.innerHTML = '<b>OVERFLOW ELEMENTS (viewport=' + w + 'px):</b><br>' + results.join('<br>');
+        document.body.appendChild(d);
+      }
+    }, 2000);
   </script>
 </body>
 </html>

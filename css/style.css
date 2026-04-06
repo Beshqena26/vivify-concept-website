@@ -2295,10 +2295,14 @@ section + section {
   }
 
   /* Kill horizontal translate animations that cause overflow */
-  .anim-left { transform: translateY(36px); }
-  .anim-left.show { transform: translateY(0); }
-  .anim-right { transform: translateY(36px); }
-  .anim-right.show { transform: translateY(0); }
+  .anim-left, .anim-right {
+    opacity: 0;
+    transform: translateY(30px) !important;
+  }
+  .anim-left.show, .anim-right.show {
+    opacity: 1;
+    transform: translateY(0) !important;
+  }
 
   .hero-grid { grid-template-columns: 1fr; }
 
