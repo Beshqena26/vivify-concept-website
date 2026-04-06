@@ -1026,13 +1026,20 @@ section { padding: 110px 0; }
 .process-step h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .process-step p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .process-timeline {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
   }
   .process-timeline::before {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
   .process-step {
     text-align: left;
