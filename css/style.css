@@ -217,7 +217,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   z-index: 1000;
   padding: 18px 0;
   transition: all 0.5s var(--ease);
@@ -2253,20 +2253,21 @@ section + section {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 280px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
     padding: 80px 24px 28px;
     gap: 14px;
-    transition: right 0.4s var(--ease);
+    transition: transform 0.4s var(--ease);
     box-shadow: -10px 0 40px rgba(0,0,0,0.1);
     z-index: 999;
     overflow-y: auto;
+    transform: translateX(100%);
   }
 
-  .nav-links.open { right: 0; }
+  .nav-links.open { transform: translateX(0); }
   .nav-toggle { display: flex; z-index: 1001; }
 
   .dropdown-menu {
