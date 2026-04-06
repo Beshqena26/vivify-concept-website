@@ -109,9 +109,24 @@
     }
 
     @media (max-width: 768px) {
-      .testi-grid { grid-template-columns: 1fr; }
-      .testi-card-new.featured { grid-template-columns: 1fr; padding: 32px; }
-      .testi-card-new.featured .testi-avatar-img { width: 64px; height: 64px; }
+      .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+      .testi-card-new { padding: 24px; }
+      .testi-card-new.featured {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        gap: 20px;
+        text-align: left;
+      }
+      .testi-card-new.featured .testi-avatar-img {
+        width: 56px;
+        height: 56px;
+      }
+      .testi-card-new.featured .testi-quote {
+        font-size: 1rem;
+      }
+      .testi-quote { font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px; }
+      .testi-stars { margin-bottom: 12px; }
+      .testi-result { margin-bottom: 14px; }
     }
   </style>
 </head>
