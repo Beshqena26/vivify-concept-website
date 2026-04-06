@@ -406,23 +406,28 @@
 
   <script src="js/main.js"></script>
   <script>
-    // DEBUG: find overflow — shows results on screen
+    // DEBUG: check scroll width vs client width
     setTimeout(() => {
-      const w = document.documentElement.clientWidth;
-      const results = [];
+      const cw = document.documentElement.clientWidth;
+      const sw = document.documentElement.scrollWidth;
+      const bw = document.body.scrollWidth;
+      const d = document.createElement('div');
+      d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:#fff;padding:16px;font-size:14px;z-index:99999;';
+      d.innerHTML = 'viewport=' + cw + ' | html.scrollWidth=' + sw + ' | body.scrollWidth=' + bw + ' | diff=' + (Math.max(sw,bw) - cw) + 'px';
+
+      // find the widest element
+      let widest = null, maxW = cw;
       document.querySelectorAll('*').forEach(el => {
-        const r = el.getBoundingClientRect();
-        if (r.right > w + 2) {
-          el.style.outline = '3px solid red';
-          results.push(el.tagName + '.' + el.className.split(' ')[0] + ' → right:' + Math.round(r.right) + ' (over by ' + Math.round(r.right - w) + 'px)');
+        if (el.scrollWidth > maxW) {
+          maxW = el.scrollWidth;
+          widest = el;
         }
       });
-      if (results.length) {
-        const d = document.createElement('div');
-        d.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:#fff;padding:12px;font-size:12px;z-index:99999;max-height:40vh;overflow:auto;';
-        d.innerHTML = '<b>OVERFLOW ELEMENTS (viewport=' + w + 'px):</b><br>' + results.join('<br>');
-        document.body.appendChild(d);
+      if (widest) {
+        d.innerHTML += '<br>WIDEST: ' + widest.tagName + '.' + (widest.className||'').split(' ').slice(0,2).join('.') + ' scrollW=' + maxW;
+        widest.style.outline = '4px solid red';
       }
+      document.body.appendChild(d);
     }, 2000);
   </script>
 </body>
