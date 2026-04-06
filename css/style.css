@@ -71,6 +71,7 @@ img { max-width: 100%; display: block; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 28px;
+  overflow: hidden;
 }
 
 /* =====================
