@@ -1080,7 +1080,12 @@ section { padding: 110px 0; }
   display: flex;
   gap: 60px;
   align-items: center;
-  /* animation set by JS for precise width calculation */
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .partners-track span {
