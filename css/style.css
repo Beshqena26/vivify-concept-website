@@ -2093,6 +2093,12 @@ section + section { position: relative; }
   /* Reset reversed order on mobile */
   [style*="order: 2"], [style*="order: 1"] { order: unset !important; }
 
+  /* --- Images: cap tall portrait images on mobile --- */
+  [style*="aspect-ratio: 4/5"] { aspect-ratio: 3/2 !important; }
+  [style*="min-height: 400px"] { min-height: 250px !important; }
+  [style*="min-height: 380px"] { min-height: 220px !important; }
+  [style*="aspect-ratio: 4/3"] { aspect-ratio: 16/9 !important; }
+
   /* --- Components --- */
   .web-showcase-inner { grid-template-columns: 1fr; padding: 24px; }
   .web-showcase-visual { display: none; }
