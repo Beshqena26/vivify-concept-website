@@ -47,7 +47,7 @@
   margin: 0; padding: 0; box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'Noto Sans Georgian', 'Inter', -apple-system, sans-serif;
@@ -374,6 +374,7 @@ p {
   padding: 120px 0 80px;
   position: relative;
   background: linear-gradient(170deg, var(--white) 40%, var(--blue-50) 100%);
+  overflow: hidden;
 }
 
 .hero::before {
@@ -570,7 +571,7 @@ p {
    SECTIONS
    ===================== */
 
-section { padding: 110px 0; }
+section { padding: 110px 0; overflow: hidden; }
 
 .section-head {
   text-align: center;
