@@ -1038,24 +1038,16 @@ section { padding: 110px 0; }
 
 @media (max-width: 768px) {
   .process-timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .process-timeline {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .process-step {
-    text-align: left;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 0;
-  }
-  .process-icon {
-    margin: 0;
-    flex-shrink: 0;
-    width: 52px;
-    height: 52px;
-    font-size: 1.3rem;
-  }
-  .process-num { margin-bottom: 4px; }
 }
 
 /* --- Stats Bar --- */
