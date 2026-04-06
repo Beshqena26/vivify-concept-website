@@ -2073,7 +2073,7 @@ section + section { position: relative; }
   .nav-links > a.btn {
     margin: 16px 28px;
     padding: 14px 28px;
-    justify-content: center;
+    justify-content: flex-start;
     border-bottom: none;
     font-size: 0.95rem;
   }
