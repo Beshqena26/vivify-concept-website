@@ -206,22 +206,38 @@ document.addEventListener('DOMContentLoaded', () => {
   if (track) {
     const logos = track.querySelectorAll('.partner-logo');
     const half = logos.length / 2;
-    // Calculate exact width of first half (original logos)
-    let totalWidth = 0;
-    const gap = 60;
-    for (let i = 0; i < half; i++) {
-      totalWidth += logos[i].offsetWidth + gap;
-    }
-    // Create keyframes dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-${totalWidth}px); }
+
+    function startMarquee() {
+      let totalWidth = 0;
+      const gap = 60;
+      for (let i = 0; i < half; i++) {
+        totalWidth += logos[i].offsetWidth + gap;
       }
-    `;
-    document.head.appendChild(style);
-    track.style.animation = `marquee ${half * 3}s linear infinite`;
+      if (totalWidth <= 0) return;
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-${totalWidth}px); }
+        }
+      `;
+      document.head.appendChild(style);
+      track.style.animation = `marquee ${half * 3}s linear infinite`;
+    }
+
+    // Wait for all logo images to load
+    let loaded = 0;
+    logos.forEach(img => {
+      if (img.complete) {
+        loaded++;
+      } else {
+        img.addEventListener('load', () => {
+          loaded++;
+          if (loaded >= logos.length) startMarquee();
+        });
+      }
+    });
+    if (loaded >= logos.length) startMarquee();
   }
 
   // --- Active nav link based on current page ---
