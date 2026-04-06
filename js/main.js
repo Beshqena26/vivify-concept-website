@@ -4,6 +4,35 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- DEBUG: Find overflowing elements ---
+  setTimeout(() => {
+    const vw = document.documentElement.clientWidth;
+    const results = [];
+    document.querySelectorAll('*').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.right > vw + 1) {
+        results.push({el, over: Math.round(rect.right - vw), tag: el.tagName, cls: (el.className || '').toString().split(' ').slice(0,2).join('.')});
+      }
+      if (rect.left < -1 && el.offsetWidth > 0) {
+        results.push({el, over: Math.round(-rect.left), tag: el.tagName, cls: (el.className || '').toString().split(' ').slice(0,2).join('.'), side: 'left'});
+      }
+    });
+    if (results.length > 0) {
+      const box = document.createElement('div');
+      box.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#e00;color:#fff;padding:16px;font:13px/1.5 monospace;z-index:99999;max-height:50vh;overflow:auto';
+      box.innerHTML = '<b>OVERFLOW (vw=' + vw + '):</b><br>' + results.map(r => r.tag + '.' + r.cls + ' → ' + (r.side||'right') + ' +' + r.over + 'px').join('<br>');
+      results.forEach(r => r.el.style.outline = '3px solid red');
+      document.body.appendChild(box);
+    }
+    // Also check scrollWidth
+    if (document.body.scrollWidth > vw) {
+      const box2 = document.createElement('div');
+      box2.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#e00;color:#fff;padding:12px;font:13px/1.5 monospace;z-index:99999';
+      box2.textContent = 'body.scrollWidth=' + document.body.scrollWidth + ' > viewport=' + vw + ' (diff=' + (document.body.scrollWidth - vw) + 'px)';
+      document.body.appendChild(box2);
+    }
+  }, 1500);
+
   // --- Mobile Nav ---
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
