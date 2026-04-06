@@ -201,6 +201,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Partners Marquee (seamless loop) ---
+  const track = document.querySelector('.partners-track');
+  if (track) {
+    const logos = track.querySelectorAll('.partner-logo');
+    const half = logos.length / 2;
+    // Calculate exact width of first half (original logos)
+    let totalWidth = 0;
+    const gap = 60;
+    for (let i = 0; i < half; i++) {
+      totalWidth += logos[i].offsetWidth + gap;
+    }
+    // Create keyframes dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-${totalWidth}px); }
+      }
+    `;
+    document.head.appendChild(style);
+    track.style.animation = `marquee ${half * 3}s linear infinite`;
+  }
+
   // --- Active nav link based on current page ---
   const currentPath = window.location.pathname;
   document.querySelectorAll('.nav-links a').forEach(link => {
