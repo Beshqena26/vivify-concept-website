@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://vivify-website-seven.vercel.app/sitemap.xml
