@@ -1921,6 +1921,7 @@ section + section { position: relative; }
 /* Collapse nav to hamburger at 1024px — Georgian text is wide */
 @media (max-width: 1024px) {
   .nav-links {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -1931,16 +1932,12 @@ section + section { position: relative; }
     flex-direction: column;
     padding: 80px 24px 28px;
     gap: 14px;
-    transition: transform 0.4s var(--ease);
     box-shadow: -10px 0 40px rgba(0,0,0,0.1);
     z-index: 999;
     overflow-y: auto;
-    transform: translateX(100%);
-    visibility: hidden;
-    will-change: transform;
   }
 
-  .nav-links.open { transform: translateX(0); visibility: visible; }
+  .nav-links.open { display: flex; }
   .nav-toggle { display: flex; z-index: 1001; }
 
   .dropdown-menu {
