@@ -1927,44 +1927,200 @@ section { padding: 110px 0; }
   margin-bottom: 40px;
 }
 
-/* Project case study */
-.project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.project-info h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); margin-bottom: 14px; font-weight: 700; }
-.project-info h2 { font-size: 1.4rem; margin-bottom: 14px; }
+/* =====================
+   PROJECT CASE STUDY
+   ===================== */
 
-.project-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-.result-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 28px;
-  text-align: center;
-  transition: all 0.4s var(--ease);
+/* Full-bleed hero */
+.case-hero {
+  width: 100%;
+  aspect-ratio: 21/9;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-.result-card:hover { border-color: var(--blue-200); box-shadow: var(--shadow-md); }
-.result-num { font-size: 2.4rem; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: 6px; }
-.result-label { font-size: 0.85rem; color: var(--gray-500); }
+.case-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6));
+}
 
-.project-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.case-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px;
+  z-index: 1;
+  color: var(--white);
+}
 
-.gallery-img {
+.case-hero-content .label { color: var(--white); margin-bottom: 12px; }
+.case-hero-content .label::before { background: var(--white); }
+.case-hero-content h1 { color: var(--white); margin-bottom: 0; }
+
+/* Service tags */
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.case-tag {
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Project overview grid */
+.case-overview {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.case-overview h2 { margin-bottom: 16px; }
+.case-overview p { line-height: 1.85; margin-bottom: 16px; }
+
+/* Project sidebar info */
+.case-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-detail {
+  padding: 20px;
+  background: var(--gray-50);
+  border-radius: 14px;
+  border: 1px solid var(--gray-200);
+}
+
+.case-detail-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.case-detail-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* Results strip */
+.case-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.case-result {
+  padding: 40px 32px;
+  text-align: center;
+  position: relative;
+}
+
+.case-result:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+.case-result-num {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.case-result-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Gallery — masonry-like */
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.case-gallery-img {
   aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
-  border-radius: var(--radius);
+  border-radius: 14px;
   transition: all 0.5s var(--ease);
+  cursor: pointer;
 }
 
-.gallery-img:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+.case-gallery-img:first-child {
+  grid-column: 1 / 3;
+  aspect-ratio: 16/9;
+}
 
+.case-gallery-img:hover {
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.05);
+}
+
+/* Project nav */
 .project-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
   border-top: 1px solid var(--gray-200);
+}
+
+/* Keep old classes for backwards compat */
+.project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.project-info h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); margin-bottom: 14px; font-weight: 700; }
+.project-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.result-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; transition: all 0.4s var(--ease); }
+.result-card:hover { border-color: var(--blue-200); box-shadow: var(--shadow-md); }
+.result-num { font-size: 2.4rem; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+.result-label { font-size: 0.85rem; color: var(--gray-500); }
+.project-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-img { aspect-ratio: 4/3; background-size: cover; background-position: center; border-radius: var(--radius); transition: all 0.5s var(--ease); }
+.gallery-img:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+
+/* Case study responsive */
+@media (max-width: 768px) {
+  .case-hero { aspect-ratio: 16/9; }
+  .case-hero-content { padding: 24px; }
+  .case-hero-content h1 { font-size: 1.6rem !important; }
+  .case-overview { grid-template-columns: 1fr; gap: 32px; }
+  .case-results { grid-template-columns: 1fr; border-radius: var(--radius-lg); }
+  .case-result:not(:last-child)::after { display: none; }
+  .case-result { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .case-gallery { grid-template-columns: 1fr 1fr; }
+  .case-gallery-img:first-child { grid-column: 1 / -1; }
+  .case-tag { font-size: 0.72rem; padding: 5px 12px; }
+  .project-info { grid-template-columns: 1fr; }
+  .project-results { grid-template-columns: 1fr; }
+  .project-gallery { grid-template-columns: 1fr; }
 }
 
 /* =====================
