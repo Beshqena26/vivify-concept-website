@@ -9,15 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.getElementById('navLinks');
 
   if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
     links.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => links.classList.remove('open'))
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.classList.remove('active');
+      })
     );
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !links.contains(e.target)) {
         links.classList.remove('open');
+        toggle.classList.remove('active');
       }
     });
   }
