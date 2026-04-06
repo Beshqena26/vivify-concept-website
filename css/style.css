@@ -2057,7 +2057,7 @@ section + section { position: relative; }
     color: var(--black);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .nav-links > a:hover,
