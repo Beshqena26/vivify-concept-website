@@ -982,16 +982,7 @@ section { padding: 110px 0; }
   position: relative;
 }
 
-.process-timeline::before {
-  content: '';
-  position: absolute;
-  top: 52px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--orange), var(--purple), var(--green));
-  border-radius: 2px;
-}
+.process-timeline::before { display: none; }
 
 .process-step {
   text-align: center;
