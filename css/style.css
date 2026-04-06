@@ -264,7 +264,7 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -1918,31 +1918,13 @@ section + section { position: relative; }
    RESPONSIVE — TABLET (1024px)
    ===================== */
 
+/* Collapse nav to hamburger at 1024px — Georgian text is wide */
 @media (max-width: 1024px) {
-  .grid-3, .grid-4, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .steps { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .stats-bar .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .hero-grid { grid-template-columns: 1fr 1fr; }
-  .split-section { grid-template-columns: 1fr 1fr; }
-  .web-showcase-inner { grid-template-columns: 1fr; padding: 40px; }
-  .web-showcase-visual { display: none; }
-  .addon-grid { grid-template-columns: 1fr; }
-}
-
-/* =====================
-   RESPONSIVE — MOBILE (768px)
-   ===================== */
-
-@media (max-width: 768px) {
-  section { padding: 60px 0; }
-
-  /* --- Mobile Nav --- */
   .nav-links {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 300px;
     height: 100vh;
     height: 100dvh;
     background: var(--white);
@@ -1974,6 +1956,26 @@ section + section { position: relative; }
   }
 
   .nav-dropdown > a .arrow { display: none; }
+
+  .grid-3, .grid-4, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stats-bar .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+  .split-section { grid-template-columns: 1fr 1fr; }
+  .web-showcase-inner { grid-template-columns: 1fr; padding: 40px; }
+  .web-showcase-visual { display: none; }
+  .addon-grid { grid-template-columns: 1fr; }
+}
+
+/* =====================
+   RESPONSIVE — MOBILE (768px)
+   ===================== */
+
+@media (max-width: 768px) {
+  section { padding: 60px 0; }
+
+  .nav-links { width: 280px; }
 
   /* --- Hero --- */
   .hero {
