@@ -2306,8 +2306,10 @@ section + section { position: relative; }
   }
 
   .hero::before, .hero::after { display: none; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-visual { height: auto; }
+  .hero-visual > div { min-height: 220px !important; height: auto; border-radius: 16px !important; }
+  .hero-card { display: none; }
   .hero-metrics { flex-direction: column; gap: 18px; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { justify-content: center; text-align: center; }
@@ -2326,11 +2328,23 @@ section + section { position: relative; }
   /* Reset reversed order on mobile */
   [style*="order: 2"], [style*="order: 1"] { order: unset !important; }
 
-  /* --- Images: cap tall portrait images on mobile --- */
-  [style*="aspect-ratio: 4/5"] { aspect-ratio: 3/2 !important; }
-  [style*="min-height: 400px"] { min-height: 250px !important; }
-  [style*="min-height: 380px"] { min-height: 220px !important; }
-  [style*="aspect-ratio: 4/3"] { aspect-ratio: 16/9 !important; }
+  /* --- Images: cap tall images on mobile --- */
+  [style*="aspect-ratio: 4/5"] { aspect-ratio: 4/3 !important; max-height: 300px; }
+  [style*="min-height: 400px"] { min-height: 200px !important; }
+  [style*="min-height: 380px"] { min-height: 200px !important; }
+  [style*="aspect-ratio: 3/2"] { max-height: 250px; }
+
+  /* All background-image divs should respect container */
+  [style*="background-image"] {
+    max-width: 100%;
+    border-radius: 16px !important;
+  }
+
+  /* Split section images */
+  .split-section [style*="background-image"] {
+    aspect-ratio: 16/9 !important;
+    max-height: 220px;
+  }
 
   /* --- Components --- */
   .web-showcase-inner { grid-template-columns: 1fr; padding: 24px; }
@@ -2387,13 +2401,36 @@ section + section { position: relative; }
   .article-content { max-width: 100%; }
 
   /* Testimonials */
-  .testi-card { padding: 28px 24px; }
-  .testi-card .quote { font-size: 0.95rem; }
+  .testi-card { padding: 24px 20px; }
+  .testi-card .quote { font-size: 0.92rem; }
 
   /* Stat cards */
   .stat-cards { gap: 12px; }
   .stat-card { padding: 20px; }
   .stat-card .num { font-size: 1.8rem; }
+
+  /* Better mobile spacing */
+  .section-head p { font-size: 0.92rem; }
+  .svc-card { padding: 28px 22px; }
+  .svc-card .num { font-size: 2.2rem; }
+  .footer { margin-top: 60px; padding: 48px 0 24px; }
+  .footer-desc { max-width: 100%; }
+
+  /* Process timeline mobile */
+  .process-step p { font-size: 0.82rem; }
+  .process-icon { width: 48px; height: 48px; font-size: 1.2rem; }
+
+  /* Web showcase */
+  .web-showcase { padding: 60px 0; }
+  .web-showcase-inner { border-radius: var(--radius-lg); }
+
+  /* CTA polish */
+  .cta-block h2 { font-size: 1.4rem !important; line-height: 1.3; }
+  .cta-block p { font-size: 0.88rem; }
+
+  /* Partners section */
+  .partners-section { padding: 28px 0; }
+  .partner-logo { height: 30px; }
 }
 
 /* =====================
@@ -2402,14 +2439,26 @@ section + section { position: relative; }
 
 @media (max-width: 420px) {
   .container { padding: 0 16px; }
-  .btn { padding: 12px 24px; font-size: 0.85rem; }
-  .btn-lg { padding: 12px 24px; font-size: 0.88rem; }
-  .hero { padding: 110px 0 40px; }
-  .page-head { padding: 110px 0 40px !important; }
-  .price-card { padding: 24px 20px; }
+  .btn { padding: 12px 20px; font-size: 0.82rem; }
+  .btn-lg { padding: 12px 24px; font-size: 0.85rem; }
+  .hero { padding: 100px 0 36px; }
+  .page-head { padding: 100px 0 36px !important; }
+  .price-card { padding: 24px 18px; }
   .stat-cards { grid-template-columns: 1fr; }
   .project-results { grid-template-columns: 1fr; }
   .project-gallery { grid-template-columns: 1fr; }
-  .stats-bar { padding: 32px 16px; margin: 0; }
-  .cta-block { padding: 40px 16px; }
+  .stats-bar { padding: 28px 16px; margin: 0; }
+  .cta-block { padding: 36px 16px; }
+  section { padding: 48px 0; }
+  .split-section { gap: 24px; }
+  .footer-grid { gap: 24px; }
+  .case-hero { aspect-ratio: 4/3; }
+  .case-results { border-radius: var(--radius); }
+  .case-result { padding: 20px 16px; }
+  .case-result-num { font-size: 1.8rem; }
+  .case-gallery { grid-template-columns: 1fr; }
+  .case-gallery-img:first-child { grid-column: auto; }
+  .process-timeline { grid-template-columns: 1fr; gap: 24px; }
+  .partner-logo { height: 24px; }
+  .partners-section { padding: 20px 0; }
 }
