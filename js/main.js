@@ -230,8 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.highlight, .highlight-orange, .highlight-purple, .highlight-green').forEach(el => {
     const color = highlightColors[Math.floor(Math.random() * highlightColors.length)];
     el.style.background = color;
-    // Slight random rotation for each
-    const rotation = (Math.random() * 2 - 1).toFixed(1);
+    el.style.color = '#fff';
+    el.style.webkitTextFillColor = '#fff';
+    const rotation = (Math.random() * 1.6 - 0.8).toFixed(1);
     el.style.transform = `rotate(${rotation}deg)`;
   });
 
