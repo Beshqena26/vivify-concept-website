@@ -299,24 +299,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Typewriter Effect on Hero ---
-  const heroP = document.querySelector('.hero-inner > p');
-  if (heroP) {
-    const fullText = heroP.textContent;
-    heroP.textContent = '';
-    heroP.style.borderRight = '2px solid var(--blue)';
+  // --- Typewriter Effect on Hero Headlines & Text ---
+  function typeWrite(el, delay) {
+    const fullText = el.textContent;
+    el.textContent = '';
+    el.style.borderRight = '2px solid var(--blue)';
+    el.style.visibility = 'visible';
     let i = 0;
-    function typeWriter() {
+    function type() {
       if (i < fullText.length) {
-        heroP.textContent += fullText.charAt(i);
+        el.textContent += fullText.charAt(i);
         i++;
-        setTimeout(typeWriter, 25);
+        setTimeout(type, 20);
       } else {
-        heroP.style.borderRight = 'none';
+        el.style.borderRight = 'none';
       }
     }
-    setTimeout(typeWriter, 800);
+    setTimeout(type, delay);
   }
+
+  // Homepage hero
+  const heroH1 = document.querySelector('.hero-inner > h1');
+  const heroP = document.querySelector('.hero-inner > p');
+  if (heroH1) typeWrite(heroH1, 300);
+  if (heroP) typeWrite(heroP, 1200);
+
+  // All page-head h1s
+  const pageH1 = document.querySelector('.page-head h1');
+  if (pageH1) typeWrite(pageH1, 400);
+
+  // Case study hero h1
+  const caseH1 = document.querySelector('.case-hero-content h1');
+  if (caseH1) typeWrite(caseH1, 400);
 
   // --- Parallax Scroll on Background Images ---
   if (window.innerWidth > 768) {
