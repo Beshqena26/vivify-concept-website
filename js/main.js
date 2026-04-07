@@ -10,28 +10,71 @@ document.addEventListener('DOMContentLoaded', () => {
   bgGradients.innerHTML = '<div class="bg-blob bg-blob-1"></div><div class="bg-blob bg-blob-2"></div><div class="bg-blob bg-blob-3"></div><div class="bg-blob bg-blob-4"></div>';
   document.body.prepend(bgGradients);
 
-  // --- Floating Shapes ---
-  const shapesContainer = document.createElement('div');
-  shapesContainer.className = 'floating-shapes';
-  const shapes = [
-    { type: 'circle', color: '#327FFC', size: 14, x: 8, y: 15 },
-    { type: 'square', color: '#FD6319', size: 10, x: 85, y: 25 },
-    { type: 'triangle', color: '#7c3aed', size: 16, x: 92, y: 55 },
-    { type: 'circle', color: '#10b981', size: 8, x: 5, y: 65 },
-    { type: 'cross', color: '#327FFC', size: 18, x: 90, y: 10 },
-    { type: 'ring', color: '#FD6319', size: 20, x: 12, y: 85 },
-    { type: 'square', color: '#7c3aed', size: 6, x: 88, y: 80 },
-    { type: 'dot', color: '#10b981', size: 5, x: 6, y: 40 },
-    { type: 'ring', color: '#327FFC', size: 12, x: 94, y: 42 },
-    { type: 'triangle', color: '#FD6319', size: 10, x: 3, y: 92 },
-  ];
-  shapes.forEach((s, i) => {
-    const el = document.createElement('div');
-    el.className = 'float-shape float-shape-' + s.type;
-    el.style.cssText = `left:${s.x}%;top:${s.y}%;width:${s.size}px;height:${s.size}px;--color:${s.color};animation-delay:${-(i * 2.3)}s;`;
-    shapesContainer.appendChild(el);
-  });
-  document.body.prepend(shapesContainer);
+  // --- Decorative Shapes ---
+  if (window.innerWidth > 768) {
+    const deco = document.createElement('div');
+    deco.className = 'deco-shapes';
+
+    // Large ring — top right
+    const ring1 = document.createElement('div');
+    ring1.className = 'deco-shape deco-ring';
+    ring1.style.cssText = 'width:280px;height:280px;top:5%;right:3%;border-color:#327FFC;';
+    deco.appendChild(ring1);
+
+    // Dashed circle — bottom left
+    const dash1 = document.createElement('div');
+    dash1.className = 'deco-shape deco-dashed';
+    dash1.style.cssText = 'width:200px;height:200px;bottom:15%;left:2%;border-color:#7c3aed;';
+    deco.appendChild(dash1);
+
+    // Arc — middle right
+    const arc1 = document.createElement('div');
+    arc1.className = 'deco-shape deco-arc';
+    arc1.style.cssText = 'width:160px;height:160px;top:45%;right:5%;color:#FD6319;';
+    deco.appendChild(arc1);
+
+    // Small ring — left middle
+    const ring2 = document.createElement('div');
+    ring2.className = 'deco-shape deco-ring';
+    ring2.style.cssText = 'width:100px;height:100px;top:35%;left:4%;border-color:#10b981;';
+    deco.appendChild(ring2);
+
+    // Dot grid — top left
+    const dots = document.createElement('div');
+    dots.className = 'deco-shape deco-dotgrid';
+    dots.style.cssText = 'top:12%;left:5%;color:#327FFC;';
+    for (let i = 0; i < 15; i++) { const d = document.createElement('span'); dots.appendChild(d); }
+    deco.appendChild(dots);
+
+    // Dot grid — bottom right
+    const dots2 = document.createElement('div');
+    dots2.className = 'deco-shape deco-dotgrid';
+    dots2.style.cssText = 'bottom:25%;right:4%;color:#FD6319;';
+    for (let i = 0; i < 15; i++) { const d = document.createElement('span'); dots2.appendChild(d); }
+    deco.appendChild(dots2);
+
+    // Lines — top left
+    const lines = document.createElement('div');
+    lines.className = 'deco-shape deco-lines';
+    lines.style.cssText = 'top:60%;left:3%;color:#7c3aed;';
+    [40, 55, 35].forEach(w => { const l = document.createElement('span'); l.style.width = w + 'px'; lines.appendChild(l); });
+    deco.appendChild(lines);
+
+    // Lines — right
+    const lines2 = document.createElement('div');
+    lines2.className = 'deco-shape deco-lines';
+    lines2.style.cssText = 'top:75%;right:3%;color:#10b981;';
+    [50, 35, 45].forEach(w => { const l = document.createElement('span'); l.style.width = w + 'px'; lines2.appendChild(l); });
+    deco.appendChild(lines2);
+
+    // Arc — bottom
+    const arc2 = document.createElement('div');
+    arc2.className = 'deco-shape deco-arc';
+    arc2.style.cssText = 'width:220px;height:220px;bottom:5%;left:8%;color:#327FFC;';
+    deco.appendChild(arc2);
+
+    document.body.prepend(deco);
+  }
 
   // --- Mobile Nav ---
   const toggle = document.getElementById('navToggle');
