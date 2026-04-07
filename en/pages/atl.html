@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ATL Marketing & Digital — Vivify Concept</title>
+  <meta name="description" content="Vivify Concept - ATL Marketing, digital campaigns, social media management, content marketing, influencer marketing, branding, video production.">
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+  <meta name="theme-color" content="#327FFC">
+  <meta property="og:title" content="ATL Marketing & Digital — Vivify Concept">
+  <meta property="og:description" content="Vivify Concept - ATL Marketing, digital campaigns, social media management, content marketing, influencer marketing, branding, video production.">
+  <meta property="og:image" content="https://vivify-website-seven.vercel.app/images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATL Marketing & Digital — Vivify Concept">
+  <meta name="twitter:description" content="Vivify Concept - ATL Marketing, digital campaigns, social media management, content marketing, influencer marketing, branding, video production.">
+  <meta name="twitter:image" content="https://vivify-website-seven.vercel.app/images/og-image.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .atl-hero-split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .atl-hero-text h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; }
+    .atl-hero-text p { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 28px; max-width: 520px; }
+    .atl-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .atl-metric-box {
+      background: linear-gradient(135deg, #327FFC 0%, #1a5fd4 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      color: var(--white);
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(50,127,252,0.25);
+    }
+    .atl-metric-box .metric-value { font-size: 4rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+    .atl-metric-box .metric-label { font-size: 1.15rem; opacity: 0.9; margin-bottom: 24px; }
+    .atl-metric-box .metric-sub { font-size: 0.88rem; opacity: 0.7; line-height: 1.6; }
+    .atl-metric-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .atl-metric-chips .chip { background: rgba(255,255,255,0.18); color: var(--white); border: 1px solid rgba(255,255,255,0.25); font-size: 0.78rem; }
+
+    /* Sticky split "What's included" */
+    .atl-included { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; }
+    .atl-included-left { position: sticky; top: 100px; }
+    .atl-included-left h2 { font-size: 2rem; margin-bottom: 16px; }
+    .atl-included-left p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
+    .atl-included-right { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* Pricing section anchors */
+    .pricing-anchor { scroll-margin-top: 80px; }
+
+    /* Section numbering */
+    .section-number { font-size: 0.82rem; font-weight: 700; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+
+    /* Pricing note */
+    .pricing-note { text-align: center; font-size: 0.88rem; color: var(--gray-500); max-width: 600px; margin: 32px auto 0; line-height: 1.7; }
+
+    /* Video production partnership */
+    .partnership-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gray-100); padding: 8px 18px; border-radius: 100px; font-size: 0.82rem; font-weight: 600; color: var(--gray-600); margin-top: 16px; }
+    .partnership-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #327FFC; }
+
+    @media (max-width: 768px) {
+      .atl-hero-split { grid-template-columns: 1fr; gap: 24px; }
+      .atl-hero-text h1 { font-size: 1.8rem; }
+      .atl-hero-text p { font-size: 1rem; }
+      .atl-included { grid-template-columns: 1fr; gap: 24px; }
+      .atl-included-left { position: static; }
+      .atl-included-left h2 { font-size: 1.5rem; }
+      .atl-included-right { grid-template-columns: 1fr; }
+      .atl-metric-box { padding: 32px 24px; }
+      .atl-metric-box .metric-value { font-size: 2.5rem; }
+      .atl-metric-box .metric-label { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../../en/index.html" class="logo">Vivify<small>Concept</small></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../../en/index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="active">Services <span class="arrow">&#9660;</span></a>
+          <div class="dropdown-menu">
+            <a href="atl.html">ATL Marketing & Digital</a>
+            <a href="btl.html">BTL Retail Marketing</a>
+            <a href="horeca.html">HORECA Projects</a>
+            <a href="web-services.html">Web Services</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-blue btn-sm">Contact</a>
+      </div>
+      <div class="lang-switch">
+        <a href="../../pages/atl.html" class="lang-btn">KA</a>
+        <a href="atl.html" class="lang-btn active">EN</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-head" style="padding: 180px 0 120px; text-align: left;">
+    <div class="container">
+      <div class="grid-2" style="gap: 48px;">
+        <div class="anim-left" style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="label" style="color: var(--blue);">ATL Marketing</span>
+          <h1>Complete <span class="highlight">Digital Space</span> Management</h1>
+          <p style="font-size: 1.15rem; line-height: 1.8; max-width: none; margin: 0; color: var(--gray-700);">From strategy to content, from advertising to analytics — one team that grows your brand in the digital world.</p>
+          <div style="margin-top: 32px; display: flex; gap: 14px;">
+            <a href="#packages" class="btn btn-blue btn-lg">Packages & Pricing &#8595;</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">Consultation</a>
+          </div>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/5; max-height: 480px; background-image: url('https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=800&h=1000&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: var(--radius-lg); box-shadow: 0 24px 60px rgba(0,0,0,0.1);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM > SOLUTION -->
+  <section>
+    <div class="container">
+      <div class="split-section">
+        <div class="anim-left">
+          <span class="label">Why ATL</span>
+          <h2>Digital marketing is no longer a choice — it's a necessity</h2>
+          <p style="margin: 16px 0; line-height: 1.8;">Brands that are not active in the digital space lose their audience every day. Above The Line (ATL) marketing encompasses campaigns targeting broad audiences — from social media to digital advertising.</p>
+          <p style="margin-bottom: 24px;">Our data-driven approach ensures that every investment returns with measurable results: more awareness, more engagement, more sales.</p>
+          <a href="contact.html" class="btn btn-blue">Get Started Now &rarr;</a>
+        </div>
+        <div class="anim-right">
+          <div class="svc-img" style="min-height: 380px; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: var(--radius-lg);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT'S INCLUDED — Sticky left + val-cards right -->
+  <section style="background: var(--gray-50);">
+    <div class="container">
+      <div class="atl-included">
+        <div class="atl-included-left anim-left">
+          <span class="label">Services</span>
+          <h2>What's Included</h2>
+          <p>All components of digital marketing in one service — from strategy to measuring results.</p>
+          <a href="contact.html" class="btn btn-blue" style="margin-top: 24px;">Contact Us &rarr;</a>
+        </div>
+        <div class="atl-included-right">
+          <div class="val-card anim">
+            <div class="val-icon">&#128200;</div>
+            <h3>Strategy & Branding</h3>
+            <p>Brand positioning, messaging, visual identity, and brand guidelines.</p>
+          </div>
+          <div class="val-card anim delay-1">
+            <div class="val-icon">&#127909;</div>
+            <h3>Photo & Video Production</h3>
+            <p>Professional photo and video content for social media and advertising.</p>
+          </div>
+          <div class="val-card anim delay-2">
+            <div class="val-icon">&#128241;</div>
+            <h3>Social Media Management</h3>
+            <p>Facebook, Instagram, LinkedIn, TikTok — planning, creation, publishing, and analytics.</p>
+          </div>
+          <div class="val-card anim">
+            <div class="val-icon">&#128221;</div>
+            <h3>Content Marketing</h3>
+            <p>Blog posts, articles, infographics — content that attracts your audience.</p>
+          </div>
+          <div class="val-card anim delay-1">
+            <div class="val-icon">&#128640;</div>
+            <h3>Digital Advertising</h3>
+            <p>Google Ads, Meta Ads, TikTok Ads — targeted campaigns for maximum ROI.</p>
+          </div>
+          <div class="val-card anim delay-2">
+            <div class="val-icon">&#127775;</div>
+            <h3>Influencer Marketing</h3>
+            <p>Influencer selection, campaign planning, execution, and results analysis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROCESS — 4 Steps -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Process</span>
+        <h2>How We Work</h2>
+        <p>A transparent, structured process — results-oriented.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step anim">
+          <div class="process-icon">&#128269;</div>
+          <div class="process-num">01</div>
+          <h3>Briefing</h3>
+          <p>We listen to your goals, analyze the market, competitors, and target audience.</p>
+        </div>
+        <div class="process-step anim delay-1">
+          <div class="process-icon">&#128203;</div>
+          <div class="process-num">02</div>
+          <h3>Strategy</h3>
+          <p>We create a detailed marketing plan with specific KPIs and a calendar.</p>
+        </div>
+        <div class="process-step anim delay-2">
+          <div class="process-icon">&#127909;</div>
+          <div class="process-num">03</div>
+          <h3>Creative</h3>
+          <p>We produce content, visuals, videos, and campaign materials.</p>
+        </div>
+        <div class="process-step anim delay-3">
+          <div class="process-icon">&#128200;</div>
+          <div class="process-num">04</div>
+          <h3>Optimization</h3>
+          <p>We measure results, optimize campaigns, and deliver detailed reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRICING — Tabbed -->
+  <section id="packages" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Pricing & Packages</span>
+        <h2>Choose the Package That Suits You</h2>
+      </div>
+
+      <div class="pricing-tabs">
+        <button class="pricing-tab active" data-tab="social">Social Media</button>
+        <button class="pricing-tab" data-tab="video">Video Content</button>
+        <button class="pricing-tab" data-tab="branding">Branding</button>
+        <button class="pricing-tab" data-tab="production">Video Production</button>
+      </div>
+
+      <!-- Tab 1: Social Media -->
+      <div class="pricing-tab-content active" data-content="social">
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-name">Vivify Start</div>
+            <div class="price-amount">2,000 &#8382;</div>
+            <p class="price-desc">8 posts x 4 videos / month</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Profile strategy development</li>
+              <li><span class="check">&#10003;</span> Thematic category planning</li>
+              <li><span class="check">&#10003;</span> Qualifying materials editing</li>
+              <li><span class="check">&#10003;</span> Monitoring activity</li>
+              <li><span class="check">&#10003;</span> 8 static content pieces</li>
+              <li><span class="check">&#10003;</span> 4 video reels (non production)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Choose Package &rarr;</a>
+          </div>
+          <div class="price-card featured">
+            <div class="price-badge">Popular</div>
+            <div class="price-name">Vivify Flow</div>
+            <div class="price-amount">3,500 &#8382;</div>
+            <p class="price-desc">16 posts x 6 videos / month</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Profile strategy development</li>
+              <li><span class="check">&#10003;</span> Qualifying materials production</li>
+              <li><span class="check">&#10003;</span> Monitoring activity</li>
+              <li><span class="check">&#10003;</span> Catalog theme suggestions</li>
+              <li><span class="check">&#10003;</span> 16 static content pieces</li>
+              <li><span class="check">&#10003;</span> 4 multi-slide content pieces</li>
+              <li><span class="check">&#10003;</span> 6 video reels (non production)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-blue">Choose Package &rarr;</a>
+          </div>
+          <div class="price-card">
+            <div class="price-name">Vivify Drive</div>
+            <div class="price-amount">5,500 &#8382;</div>
+            <p class="price-desc">20 posts x 8 videos / month</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Profile strategy development</li>
+              <li><span class="check">&#10003;</span> Professional content integration</li>
+              <li><span class="check">&#10003;</span> Monitoring activity and reporting</li>
+              <li><span class="check">&#10003;</span> Catalog and visual themes</li>
+              <li><span class="check">&#10003;</span> 8 static content pieces</li>
+              <li><span class="check">&#10003;</span> 4 multi-slide content pieces</li>
+              <li><span class="check">&#10003;</span> 8 video reels (non production)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Choose Package &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Video Content -->
+      <div class="pricing-tab-content" data-content="video">
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-name">4 Videos</div>
+            <div class="price-amount">1,440 &#8382;</div>
+            <p class="price-desc">360 &#8382; / video</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Video shooting (with our equipment)</li>
+              <li><span class="check">&#10003;</span> Short-form video (Reels / TikTok)</li>
+              <li><span class="check">&#10003;</span> Video editing & Color Grading</li>
+              <li><span class="check">&#10003;</span> Music / Sound addition</li>
+              <li><span class="check">&#10003;</span> Export-ready format (9:16)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Order &rarr;</a>
+          </div>
+          <div class="price-card featured">
+            <div class="price-badge">Best Price</div>
+            <div class="price-name">8 Videos</div>
+            <div class="price-amount">2,640 &#8382;</div>
+            <p class="price-desc">330 &#8382; / video — optimal choice</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Video shooting (with our equipment)</li>
+              <li><span class="check">&#10003;</span> Short-form video (Reels / TikTok)</li>
+              <li><span class="check">&#10003;</span> Video editing & Color Grading</li>
+              <li><span class="check">&#10003;</span> Music / Sound addition</li>
+              <li><span class="check">&#10003;</span> Export-ready format (9:16)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-blue">Order &rarr;</a>
+          </div>
+          <div class="price-card">
+            <div class="price-name">12 Videos</div>
+            <div class="price-amount">3,600 &#8382;</div>
+            <p class="price-desc">300 &#8382; / video — maximum savings</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Video shooting (with our equipment)</li>
+              <li><span class="check">&#10003;</span> Short-form video (Reels / TikTok)</li>
+              <li><span class="check">&#10003;</span> Video editing & Color Grading</li>
+              <li><span class="check">&#10003;</span> Music / Sound addition</li>
+              <li><span class="check">&#10003;</span> Export-ready format (9:16)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Order &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Branding -->
+      <div class="pricing-tab-content" data-content="branding">
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-name">Basic Plan</div>
+            <div class="price-amount">1,000 &#8382;</div>
+            <p class="price-desc">Logo and basic branding</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Logo design (1 concept)</li>
+              <li><span class="check">&#10003;</span> Element set</li>
+              <li><span class="check">&#10003;</span> Color palette</li>
+              <li><span class="check">&#10003;</span> Vector format</li>
+              <li><span class="check">&#10003;</span> 2 free revisions</li>
+              <li><span class="check">&#10003;</span> Deadline: 1 week</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Choose &rarr;</a>
+          </div>
+          <div class="price-card featured">
+            <div class="price-badge">Recommended</div>
+            <div class="price-name">Premium Branding</div>
+            <div class="price-amount">3,500 &#8382;</div>
+            <p class="price-desc">Complete branding package</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Includes Basic Plan</li>
+              <li><span class="check">&#10003;</span> Business card / Sticker</li>
+              <li><span class="check">&#10003;</span> Color palette & Typography</li>
+              <li><span class="check">&#10003;</span> Print material design</li>
+              <li><span class="check">&#10003;</span> 2 free revisions</li>
+              <li><span class="check">&#10003;</span> Deadline: 10 business days</li>
+            </ul>
+            <a href="contact.html" class="btn btn-blue">Choose &rarr;</a>
+          </div>
+          <div class="price-card">
+            <div class="price-name">Brand Ecosystem</div>
+            <div class="price-amount">6,000 &#8382;</div>
+            <p class="price-desc">Complete creative package</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Print materials</li>
+              <li><span class="check">&#10003;</span> Merchandise design</li>
+              <li><span class="check">&#10003;</span> Stationery Design</li>
+              <li><span class="check">&#10003;</span> Social media cover system</li>
+              <li><span class="check">&#10003;</span> Brand development</li>
+              <li><span class="check">&#10003;</span> Multiple revisions</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Choose &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Video Production -->
+      <div class="pricing-tab-content" data-content="production">
+        <p style="text-align: center; margin-bottom: 32px;"><span class="partnership-badge">Studio 72 Official Partner</span></p>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-name">High Performance Reels</div>
+            <div class="price-amount">400$<small>+</small></div>
+            <p class="price-desc">High engagement reels</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Dynamic content creation</li>
+              <li><span class="check">&#10003;</span> Vertical videos for social media</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Order &rarr;</a>
+          </div>
+          <div class="price-card featured">
+            <div class="price-badge">Popular</div>
+            <div class="price-name">Professional Production</div>
+            <div class="price-amount">5,000$<small>+</small></div>
+            <p class="price-desc">Professional video package</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> High-quality video content</li>
+              <li><span class="check">&#10003;</span> Professional shooting & editing</li>
+            </ul>
+            <a href="contact.html" class="btn btn-blue">Order &rarr;</a>
+          </div>
+          <div class="price-card">
+            <div class="price-name">Premium Cinematic</div>
+            <div class="price-amount">12,000$<small>+</small></div>
+            <p class="price-desc">Cinematic production</p>
+            <ul class="price-features">
+              <li><span class="check">&#10003;</span> Premium quality image videos</li>
+              <li><span class="check">&#10003;</span> Full pre/post-production</li>
+            </ul>
+            <a href="contact.html" class="btn btn-ghost">Order &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. CTA -->
+  <section style="background: var(--gray-50); padding-bottom: 0;">
+    <div class="container">
+      <div class="cta-block anim-scale">
+        <h2>Not sure which package suits you?</h2>
+        <p>Book a free consultation — our team will help you choose the right strategy and package.</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-blue btn-lg">Free Consultation &rarr;</a>
+          <a href="tel:+995593382809" class="btn btn-ghost btn-lg">+995 593 38 28 09</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../../en/index.html" class="logo">Vivify<small>Concept</small></a>
+          <p class="footer-desc">We bring brands to life with innovative marketing strategies.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="../../en/index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a></div>
+        <div class="footer-col"><h4>Other</h4><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+995593382809">+995 593 38 28 09</a><a href="mailto:info@vivifyconcept.com">info@vivifyconcept.com</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Vivify Concept. All rights reserved.</p><p>Creativity That Stands Out</p></div>
+    </div>
+  </footer>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

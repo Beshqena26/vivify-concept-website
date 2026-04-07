@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Testimonials — Vivify Concept</title>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+  <meta name="theme-color" content="#327FFC">
+  <meta property="og:title" content="Testimonials — Vivify Concept">
+  <meta property="og:image" content="https://vivify-website-seven.vercel.app/images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Testimonials — Vivify Concept">
+  <meta name="twitter:description" content="Testimonials — Vivify Concept">
+  <meta name="twitter:image" content="https://vivify-website-seven.vercel.app/images/og-image.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .testi-card-new {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .testi-card-new:hover {
+      border-color: transparent;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .testi-card-new.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+      background: linear-gradient(135deg, var(--blue), #1a5fd4);
+      border: none;
+      color: var(--white);
+      padding: 48px;
+    }
+
+    .testi-card-new.featured:hover {
+      box-shadow: 0 20px 60px rgba(50,127,252,0.25);
+    }
+
+    .testi-card-new.featured .testi-quote { color: rgba(255,255,255,0.9); font-size: 1.15rem; }
+    .testi-card-new.featured .testi-stars { color: #fbbf24; }
+    .testi-card-new.featured .testi-client-name { color: var(--white); }
+    .testi-card-new.featured .testi-client-role { color: rgba(255,255,255,0.6); }
+
+    .testi-avatar-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .testi-card-new.featured .testi-avatar-img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .testi-stars {
+      color: var(--orange);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testi-quote {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray-700);
+      margin-bottom: 24px;
+    }
+
+    .testi-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: var(--blue-50);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .testi-card-new.featured .testi-result {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+
+    .testi-client {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-client-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .testi-client-role {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    @media (max-width: 768px) {
+      .testi-grid { grid-template-columns: 1fr; gap: 16px; }
+      .testi-card-new { padding: 24px; }
+      .testi-card-new.featured {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        gap: 20px;
+        text-align: left;
+      }
+      .testi-card-new.featured .testi-avatar-img {
+        width: 56px;
+        height: 56px;
+      }
+      .testi-card-new.featured .testi-quote {
+        font-size: 1rem;
+      }
+      .testi-quote { font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px; }
+      .testi-stars { margin-bottom: 12px; }
+      .testi-result { margin-bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../../en/index.html" class="logo">Vivify<small>Concept</small></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../../en/index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <span class="arrow">&#9660;</span></a>
+          <div class="dropdown-menu">
+            <a href="atl.html">ATL Marketing & Digital</a>
+            <a href="btl.html">BTL Retail Marketing</a>
+            <a href="horeca.html">HORECA Projects</a>
+            <a href="web-services.html">Web Services</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn btn-blue btn-sm">Contact</a>
+      </div>
+      <div class="lang-switch">
+        <a href="../../pages/testimonials.html" class="lang-btn">KA</a>
+        <a href="testimonials.html" class="lang-btn active">EN</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-head" style="padding: 180px 0 120px; text-align: left;">
+    <div class="container">
+      <div class="grid-2" style="gap: 48px;">
+        <div class="anim-left" style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="label">Testimonials</span>
+          <h1>Client Success Stories</h1>
+          <p style="font-size: 1.15rem; line-height: 1.8; max-width: none; margin: 0; color: var(--gray-700);">Real results and honest feedback from brands we've helped grow.</p>
+        </div>
+        <div class="anim-right">
+          <div style="width: 100%; aspect-ratio: 4/5; max-height: 480px; background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=1000&fit=crop&q=80'); background-size: cover; background-position: center; border-radius: var(--radius-lg); box-shadow: 0 24px 60px rgba(0,0,0,0.1);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Testimonial -->
+  <section>
+    <div class="container">
+      <div class="testi-grid">
+
+        <!-- Featured — full width -->
+        <div class="testi-card-new featured anim">
+          <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80');"></div>
+          <div>
+            <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testi-quote">"Vivify Concept completely transformed our brand's presentation. Their strategic approach and creative execution exceeded all expectations. Engagement increased by 300% in the first quarter."</p>
+            <div class="testi-result">&#8593; Engagement +300%</div>
+            <div class="testi-client">
+              <div>
+                <div class="testi-client-name">Green Coffee</div>
+                <div class="testi-client-role">Brand Partner — ATL Marketing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testi-card-new anim delay-1">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-quote">"The team's dedication and attention to detail is remarkable. They don't just create campaigns — they deliver real results that directly impact our business."</p>
+          <div class="testi-result">&#127919; ROI +200%</div>
+          <div class="testi-client">
+            <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&q=80');"></div>
+            <div>
+              <div class="testi-client-name">Travel Box</div>
+              <div class="testi-client-role">Brand Partner — Digital</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testi-card-new anim delay-2">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-quote">"Working with Vivify added a whole new dimension to our restaurant opening. From concept to opening day, everything was executed flawlessly. We were fully booked in the first week."</p>
+          <div class="testi-result">&#127860; Fully booked in the first week</div>
+          <div class="testi-client">
+            <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&q=80');"></div>
+            <div>
+              <div class="testi-client-name">NLG</div>
+              <div class="testi-client-role">HORECA Client</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="testi-card-new anim">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-quote">"Their BTL marketing strategy completely transformed our retail representation. Point-of-sale purchases increased by 45% after implementing their recommendations."</p>
+          <div class="testi-result">&#8593; Sales +45%</div>
+          <div class="testi-client">
+            <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&q=80');"></div>
+            <div>
+              <div class="testi-client-name">Simpatea</div>
+              <div class="testi-client-role">Retail Partner — BTL</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="testi-card-new anim delay-1">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-quote">"Vivify's influencer marketing campaign generated 2M+ impressions for our travel brand. Their network and execution capabilities are truly impressive."</p>
+          <div class="testi-result">&#128200; 2M+ Impressions</div>
+          <div class="testi-client">
+            <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&q=80');"></div>
+            <div>
+              <div class="testi-client-name">Georgia Travel</div>
+              <div class="testi-client-role">Brand Partner — Influencer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 — full width -->
+        <div class="testi-card-new featured anim delay-2" style="background: linear-gradient(135deg, var(--gray-900), #2d2d2d);">
+          <div class="testi-avatar-img" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&q=80');"></div>
+          <div>
+            <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testi-quote">"The social media management they provide is outstanding. Our follower base grew 10x and engagement metrics are consistently above industry average."</p>
+            <div class="testi-result" style="background: rgba(255,255,255,0.1);">&#128200; Followers 10x</div>
+            <div class="testi-client">
+              <div>
+                <div class="testi-client-name">Holding Group</div>
+                <div class="testi-client-role">Long-term Partner</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="padding: 0;">
+    <div class="stats-bar anim-scale">
+      <div class="container">
+        <div class="grid-4">
+          <div><div class="stat-num">4.9/5</div><div class="stat-txt">Average Rating</div></div>
+          <div><div class="stat-num">98%</div><div class="stat-txt">Client Satisfaction</div></div>
+          <div><div class="stat-num">85%</div><div class="stat-txt">Returning Clients</div></div>
+          <div><div class="stat-num">30+</div><div class="stat-txt">Satisfied Brands</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-bottom: 0;">
+    <div class="container">
+      <div class="cta-block anim-scale">
+        <h2>Ready to become our next success story?</h2>
+        <p>Join the brands that trust Vivify Concept to deliver results.</p>
+        <a href="contact.html" class="btn btn-blue btn-lg">Free Consultation &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../../en/index.html" class="logo">Vivify<small>Concept</small></a>
+          <p class="footer-desc">We bring brands to life with innovative marketing strategies.</p>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="../../en/index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a></div>
+        <div class="footer-col"><h4>Other</h4><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+995593382809">+995 593 38 28 09</a><a href="mailto:info@vivifyconcept.com">info@vivifyconcept.com</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 Vivify Concept. All rights reserved.</p><p>Creativity That Stands Out</p></div>
+    </div>
+  </footer>
+  <script src="../../js/main.js"></script>
+</body>
+</html>
