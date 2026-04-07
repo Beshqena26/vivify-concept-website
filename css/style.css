@@ -2327,7 +2327,7 @@ section + section { position: relative; }
   .split-text,
   .split-section > div { text-align: center; }
 
-  .label { justify-content: center !important; text-align: center !important; }
+  .label { justify-content: center !important; text-align: center !important; width: 100%; }
 
   .split-text .btn,
   .split-section .btn { align-self: center; }
