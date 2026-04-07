@@ -290,12 +290,14 @@ p {
 }
 
 .nav-links a {
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--gray-600);
   transition: color 0.3s;
   position: relative;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a:hover,
@@ -402,6 +404,7 @@ p {
   transition: all 0.3s var(--ease);
   text-decoration: none;
   display: block;
+  text-transform: uppercase;
 }
 
 .lang-btn.active {
