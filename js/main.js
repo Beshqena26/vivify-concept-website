@@ -287,22 +287,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Custom Cursor (desktop only) ---
   if (window.matchMedia('(hover: hover)').matches) {
+    document.body.style.cursor = 'none';
+    document.querySelectorAll('a, button').forEach(el => el.style.cursor = 'none');
+
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
+    const dot = document.createElement('div');
+    dot.classList.add('cursor-dot');
     document.body.appendChild(cursor);
+    document.body.appendChild(dot);
+
+    let cx = 0, cy = 0, dx = 0, dy = 0;
 
     document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
+      dx = e.clientX;
+      dy = e.clientY;
+      dot.style.left = dx + 'px';
+      dot.style.top = dy + 'px';
     });
 
-    document.querySelectorAll('a, button, .svc-card, .price-card, .blog-card, .port-item, .svc-nav-card, .filter-btn').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    // Outer ring follows with smooth delay
+    function animateCursor() {
+      cx += (dx - cx) * 0.15;
+      cy += (dy - cy) * 0.15;
+      cursor.style.left = cx + 'px';
+      cursor.style.top = cy + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    const hoverEls = document.querySelectorAll('a, button, .svc-gradient-card, .price-card, .blog-card, .port-item, .svc-nav-card, .filter-btn, .pricing-tab, .testi-card');
+    hoverEls.forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); dot.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); dot.classList.remove('hover'); });
     });
 
-    document.addEventListener('mousedown', () => cursor.classList.add('click'));
-    document.addEventListener('mouseup', () => cursor.classList.remove('click'));
+    document.addEventListener('mousedown', () => { cursor.classList.add('click'); dot.classList.add('click'); });
+    document.addEventListener('mouseup', () => { cursor.classList.remove('click'); dot.classList.remove('click'); });
   }
 
   // --- Counter Pop Animation ---
