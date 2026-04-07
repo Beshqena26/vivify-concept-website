@@ -228,4 +228,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Custom Cursor (desktop only) ---
+  if (window.matchMedia('(hover: hover)').matches) {
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .svc-card, .price-card, .blog-card, .port-item, .svc-nav-card, .filter-btn').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    document.addEventListener('mousedown', () => cursor.classList.add('click'));
+    document.addEventListener('mouseup', () => cursor.classList.remove('click'));
+  }
+
+  // --- Counter Pop Animation ---
+  document.querySelectorAll('.stat-num').forEach(el => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => el.classList.add('counted'), 2100);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    obs.observe(el);
+  });
+
+  // --- Stagger Children Animation ---
+  document.querySelectorAll('.stagger-children').forEach(el => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    obs.observe(el);
+  });
+
+  // --- Card Tilt Effect (desktop only) ---
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.svc-card, .svc-nav-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-8px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
 });
