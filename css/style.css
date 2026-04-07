@@ -2312,6 +2312,7 @@ section + section { position: relative; }
   .hero-btns .btn { justify-content: center; text-align: center; }
 
   /* --- Center align everything on mobile --- */
+  h1, h2, h3 { text-align: center !important; }
   .page-head,
   [style*="text-align: left"] { text-align: center !important; }
 
