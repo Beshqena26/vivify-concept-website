@@ -2344,6 +2344,83 @@ section { padding: 110px 0; position: relative; }
   background: var(--orange);
 }
 
+/* Cursor text label */
+.cursor-label {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  background: var(--black);
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.3s, transform 0.3s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.cursor-label.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  position: relative;
+}
+
+.dot-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--gray-300) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dot-grid > .container { position: relative; z-index: 1; }
+
+/* Marquee text strip */
+.marquee-strip {
+  overflow: hidden;
+  padding: 20px 0;
+  background: var(--black);
+  white-space: nowrap;
+}
+
+.marquee-strip-track {
+  display: inline-flex;
+  animation: marqueeStrip 20s linear infinite;
+}
+
+.marquee-strip-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 16px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.marquee-strip-text span {
+  color: var(--blue);
+  font-size: 0.6rem;
+}
+
+@keyframes marqueeStrip {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Blur-in animation (smoother than basic fade) */
 .anim-blur {
   opacity: 0;

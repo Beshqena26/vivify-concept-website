@@ -324,6 +324,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('mousedown', () => { cursor.classList.add('click'); dot.classList.add('click'); });
     document.addEventListener('mouseup', () => { cursor.classList.remove('click'); dot.classList.remove('click'); });
+
+    // Cursor text labels
+    const label = document.createElement('div');
+    label.classList.add('cursor-label');
+    document.body.appendChild(label);
+
+    const labelMap = {
+      '.port-item': 'ნახე პროექტი',
+      '.svc-gradient-card': 'გაიგე მეტი',
+      '.blog-card': 'წაიკითხე',
+      '.case-gallery-img': 'გალერეა',
+    };
+
+    Object.entries(labelMap).forEach(([sel, text]) => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.addEventListener('mouseenter', () => { label.textContent = text; label.classList.add('show'); });
+        el.addEventListener('mouseleave', () => { label.classList.remove('show'); });
+      });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      label.style.left = (e.clientX + 20) + 'px';
+      label.style.top = (e.clientY - 20) + 'px';
+    });
   }
 
   // --- Counter Pop Animation ---
