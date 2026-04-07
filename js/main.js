@@ -299,27 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Typewriter Effect on paragraphs only ---
-  function typeWrite(el, delay) {
-    const fullText = el.textContent;
-    el.textContent = '';
-    el.style.borderRight = '2px solid var(--blue)';
-    let i = 0;
-    function type() {
-      if (i < fullText.length) {
-        el.textContent += fullText.charAt(i);
-        i++;
-        setTimeout(type, 18);
-      } else {
-        el.style.borderRight = 'none';
-      }
-    }
-    setTimeout(type, delay);
-  }
-
-  // Only on paragraphs (no HTML spans to worry about)
-  const heroP = document.querySelector('.hero-inner > p');
-  if (heroP) typeWrite(heroP, 600);
 
   // --- Parallax Scroll on Background Images ---
   if (window.innerWidth > 768) {

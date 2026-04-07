@@ -445,6 +445,7 @@ p {
 .hero-visual {
   position: relative;
   height: 420px;
+  animation: heroScaleIn 1s var(--ease-out) 0.4s both;
 }
 
 .hero-card {
@@ -515,8 +516,8 @@ p {
   font-weight: 600;
   color: var(--blue);
   margin-bottom: 28px;
-  animation: slideDown 0.8s var(--ease-out) both;
   border: 1px solid var(--blue-200);
+  animation: heroFadeBlur 0.8s var(--ease-out) 0.1s both;
 }
 
 .hero-badge .pulse-dot {
@@ -534,7 +535,34 @@ p {
 
 .hero h1 {
   margin-bottom: 22px;
-  animation: slideUp 0.9s var(--ease-out) 0.1s both;
+  animation: heroFadeBlur 0.9s var(--ease-out) 0.3s both;
+}
+
+/* Hero entrance animations */
+@keyframes heroFadeBlur {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
 
 .hero h1 .blue { color: var(--blue); }
@@ -545,7 +573,7 @@ p {
   max-width: 520px;
   margin-bottom: 38px;
   color: var(--gray-600);
-  animation: slideUp 0.9s var(--ease-out) 0.2s both;
+  animation: heroFadeBlur 0.9s var(--ease-out) 0.5s both;
 }
 
 .hero-btns {
@@ -553,7 +581,7 @@ p {
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 72px;
-  animation: slideUp 0.9s var(--ease-out) 0.3s both;
+  animation: heroFadeBlur 0.8s var(--ease-out) 0.7s both;
 }
 
 .hero-metrics {
@@ -1598,8 +1626,10 @@ section { padding: 110px 0; position: relative; }
   background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
 }
 
-.page-head h1 { margin-bottom: 14px; }
-.page-head p { max-width: 480px; margin: 0 auto; }
+.page-head h1 { margin-bottom: 14px; animation: heroFadeBlur 0.8s var(--ease-out) 0.2s both; }
+.page-head p { max-width: 480px; margin: 0 auto; animation: heroFadeBlur 0.8s var(--ease-out) 0.4s both; }
+.page-head .label { animation: heroFadeBlur 0.7s var(--ease-out) 0.1s both; }
+.page-head .grid-2 { animation: heroFadeBlur 0.9s var(--ease-out) 0.2s both; }
 
 /* --- Stat Cards (About) --- */
 .stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -2212,9 +2242,10 @@ section { padding: 110px 0; position: relative; }
   color: var(--white);
 }
 
-.case-hero-content .label { color: var(--white); margin-bottom: 12px; }
+.case-hero-content .label { color: var(--white); margin-bottom: 12px; animation: heroFadeBlur 0.7s var(--ease-out) 0.3s both; }
 .case-hero-content .label::before { background: var(--white); }
-.case-hero-content h1 { color: var(--white); margin-bottom: 0; }
+.case-hero-content h1 { color: var(--white); margin-bottom: 0; animation: heroFadeBlur 0.9s var(--ease-out) 0.5s both; }
+.case-tags { animation: heroFadeBlur 0.8s var(--ease-out) 0.7s both; }
 
 /* Service tags */
 .case-tags {
