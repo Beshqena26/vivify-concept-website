@@ -138,24 +138,21 @@ p {
 /* Highlighted text — colored marker behind word */
 .highlight {
   display: inline;
-  padding: 2px 12px;
+  padding: 4px 16px;
+  margin: 0 4px;
   background: var(--blue);
   color: var(--white);
-  border-radius: 6px;
+  border-radius: 8px;
   -webkit-text-fill-color: var(--white);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transform: rotate(-1deg);
+  display: inline-block;
 }
 
-.highlight-orange {
-  background: var(--orange);
-}
-
-.highlight-purple {
-  background: var(--purple);
-}
-
-.highlight-green {
-  background: var(--green);
-}
+.highlight-orange { background: var(--orange); }
+.highlight-purple { background: var(--purple); }
+.highlight-green { background: var(--green); }
 
 /* =====================
    BUTTONS
