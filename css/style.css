@@ -1768,6 +1768,47 @@ section { padding: 110px 0; position: relative; }
 .price-card.featured .price-features .check { color: var(--orange); }
 .price-card .btn { width: 100%; justify-content: center; }
 
+/* --- Pricing Tabs --- */
+.pricing-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.pricing-tab {
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1.5px solid var(--gray-200);
+  background: transparent;
+  color: var(--gray-600);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s var(--ease);
+}
+
+.pricing-tab:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.pricing-tab.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.pricing-tab-content {
+  display: none;
+}
+
+.pricing-tab-content.active {
+  display: block;
+}
+
 /* --- Add-ons --- */
 .addon-grid {
   display: grid;

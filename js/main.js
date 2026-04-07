@@ -225,6 +225,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Pricing Tabs ---
+  document.querySelectorAll('.pricing-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      const parent = tab.closest('section');
+      parent.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
+      parent.querySelectorAll('.pricing-tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      parent.querySelector(`[data-content="${target}"]`).classList.add('active');
+    });
+  });
+
   // --- Active nav link based on current page ---
   const currentPath = window.location.pathname;
   document.querySelectorAll('.nav-links a').forEach(link => {
