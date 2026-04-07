@@ -137,17 +137,17 @@ p {
 
 /* Highlighted text — colored marker behind word */
 .highlight {
-  display: inline;
-  padding: 4px 16px;
-  margin: 0 4px;
+  display: inline-block;
+  padding: 2px 14px 6px;
+  margin: 0 2px;
   background: var(--blue);
   color: var(--white);
-  border-radius: 8px;
   -webkit-text-fill-color: var(--white);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  transform: rotate(-1deg);
-  display: inline-block;
+  border-radius: 6px 12px 6px 10px;
+  transform: rotate(-0.8deg);
+  position: relative;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .highlight-orange { background: var(--orange); }

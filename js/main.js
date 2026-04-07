@@ -225,6 +225,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Randomize Highlight Colors ---
+  const highlightColors = ['#327FFC', '#FD6319', '#7c3aed', '#10b981'];
+  document.querySelectorAll('.highlight, .highlight-orange, .highlight-purple, .highlight-green').forEach(el => {
+    const color = highlightColors[Math.floor(Math.random() * highlightColors.length)];
+    el.style.background = color;
+    // Slight random rotation for each
+    const rotation = (Math.random() * 2 - 1).toFixed(1);
+    el.style.transform = `rotate(${rotation}deg)`;
+  });
+
   // --- Pricing Tabs ---
   document.querySelectorAll('.pricing-tab').forEach(tab => {
     tab.addEventListener('click', () => {
