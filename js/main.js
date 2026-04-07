@@ -225,6 +225,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Georgian Uppercase (Mtavruli) ---
+  const geoLower = 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
+  const geoUpper = 'ᲐᲑᲒᲓᲔᲕᲖᲗᲘᲙᲚᲛᲜᲝᲞᲟᲠᲡᲢᲣᲤᲥᲦᲧᲨᲩᲪᲫᲬᲭᲮᲯᲰ';
+  document.querySelectorAll('h1, h2, h3, h4, .nav-links a:not(.btn)').forEach(el => {
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (walk.nextNode()) {
+      let text = walk.currentNode.textContent;
+      let changed = false;
+      for (let i = 0; i < geoLower.length; i++) {
+        if (text.includes(geoLower[i])) {
+          text = text.split(geoLower[i]).join(geoUpper[i]);
+          changed = true;
+        }
+      }
+      if (changed) walk.currentNode.textContent = text;
+    }
+  });
+
   // --- Randomize Highlight Colors ---
   const highlightColors = ['#327FFC', '#FD6319', '#7c3aed', '#10b981'];
   document.querySelectorAll('.highlight, .highlight-orange, .highlight-purple, .highlight-green').forEach(el => {
