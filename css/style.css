@@ -2376,7 +2376,8 @@ section { padding: 110px 0; position: relative; }
 /* Full-bleed hero */
 .case-hero {
   width: 100%;
-  aspect-ratio: 21/9;
+  aspect-ratio: 16/9;
+  max-height: 500px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -2551,7 +2552,7 @@ section { padding: 110px 0; position: relative; }
 
 /* Case study responsive */
 @media (max-width: 768px) {
-  .case-hero { aspect-ratio: 16/9; }
+  .case-hero { aspect-ratio: 4/3; max-height: 350px; }
   .case-hero-content { padding: 24px; }
   .case-hero-content h1 { font-size: 1.6rem !important; }
   .case-overview { grid-template-columns: 1fr; gap: 32px; }
@@ -2934,7 +2935,7 @@ section + section { position: relative; }
   section { padding: 48px 0; }
   .split-section { gap: 24px; }
   .footer-grid { gap: 24px; }
-  .case-hero { aspect-ratio: 4/3; }
+  .case-hero { aspect-ratio: 1/1; max-height: 280px; }
   .case-results { border-radius: var(--radius); }
   .case-result { padding: 20px 16px; }
   .case-result-num { font-size: 1.8rem; }
