@@ -2311,11 +2311,11 @@ section + section { position: relative; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { justify-content: center; text-align: center; }
 
-  /* --- Center align on mobile --- */
-  .page-head { text-align: center !important; }
+  /* --- Center align everything on mobile --- */
+  .page-head,
+  [style*="text-align: left"] { text-align: center !important; }
+
   .page-head p { margin: 0 auto !important; max-width: none !important; }
-  .page-head [style*="text-align: left"] { text-align: center !important; }
-  .page-head [style*="display: flex"] { justify-content: center !important; }
 
   .hero-inner { text-align: center; }
   .hero-inner > p { margin-left: auto; margin-right: auto; }
@@ -2323,9 +2323,35 @@ section + section { position: relative; }
 
   .section-head { text-align: center; }
 
-  .split-text { text-align: center; }
-  .split-text .label { justify-content: center; }
-  .split-text .btn { align-self: center; }
+  .split-text,
+  .split-section > div { text-align: center; }
+
+  .split-text .label,
+  .label { justify-content: center; }
+
+  .split-text .btn,
+  .split-section .btn { align-self: center; }
+
+  /* Center flex containers used as hero CTAs */
+  [style*="display: flex; flex-direction: column; justify-content: center"] {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  [style*="display: flex; gap: 14px"] {
+    justify-content: center !important;
+  }
+
+  /* Val cards keep left text (they're list items) */
+  .val-card[style*="display: flex"] {
+    text-align: left !important;
+  }
+
+  /* Center paragraphs with inline max-width */
+  [style*="max-width: none; margin: 0"] {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
 
   /* --- Layout stacking --- */
   .split-section { grid-template-columns: 1fr !important; gap: 32px; }
