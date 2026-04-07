@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Card Tilt + Glow Effect (desktop only) ---
   if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.svc-card, .svc-nav-card, .price-card, .blog-card, .testi-card, .val-card').forEach(card => {
+    document.querySelectorAll('.svc-card, .svc-nav-card, .price-card:not(.featured), .blog-card, .testi-card, .val-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -295,6 +295,19 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('mouseleave', () => {
         card.style.transform = '';
         card.style.background = '';
+      });
+    });
+
+    // Featured cards — tilt only, no background override
+    document.querySelectorAll('.price-card.featured').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
       });
     });
   }
