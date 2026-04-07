@@ -301,10 +301,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Typewriter Effect on Hero Headlines & Text ---
   function typeWrite(el, delay) {
+    const originalHTML = el.innerHTML;
     const fullText = el.textContent;
     el.textContent = '';
     el.style.borderRight = '2px solid var(--blue)';
-    el.style.visibility = 'visible';
     let i = 0;
     function type() {
       if (i < fullText.length) {
@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 20);
       } else {
         el.style.borderRight = 'none';
+        el.innerHTML = originalHTML;
       }
     }
     setTimeout(type, delay);
