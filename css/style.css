@@ -1976,6 +1976,64 @@ section { padding: 110px 0; position: relative; }
    CREATIVE EFFECTS
    ===================== */
 
+/* Decorative graphic shapes */
+.decor-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decor-shape {
+  position: absolute;
+  color: var(--gray-200);
+  opacity: 0.5;
+  animation: decorSpin 30s linear infinite;
+}
+
+.decor-circle {
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  right: 10%;
+}
+
+.decor-cross {
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  left: 8%;
+  animation-direction: reverse;
+  animation-duration: 25s;
+}
+
+.decor-dots {
+  width: 40px;
+  height: 12px;
+  top: 5px;
+  left: 5%;
+}
+
+.decor-triangle {
+  width: 24px;
+  height: 24px;
+  bottom: -5px;
+  right: 15%;
+  animation-duration: 35s;
+}
+
+@keyframes decorSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .decor-shapes { display: none; }
+}
+
 /* Animated gradient text */
 .gradient-animate {
   background: linear-gradient(90deg, var(--blue), var(--purple), var(--blue));

@@ -280,19 +280,71 @@ document.addEventListener('DOMContentLoaded', () => {
     obs.observe(el);
   });
 
-  // --- Card Tilt Effect (desktop only) ---
+  // --- Card Tilt + Glow Effect (desktop only) ---
   if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.svc-card, .svc-nav-card').forEach(card => {
+    document.querySelectorAll('.svc-card, .svc-nav-card, .price-card, .blog-card, .testi-card, .val-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-8px)`;
+        const px = e.clientX - rect.left;
+        const py = e.clientY - rect.top;
+        card.style.transform = `perspective(600px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-6px)`;
+        card.style.background = `radial-gradient(circle at ${px}px ${py}px, rgba(50,127,252,0.06), transparent 60%), var(--white)`;
       });
       card.addEventListener('mouseleave', () => {
         card.style.transform = '';
+        card.style.background = '';
       });
     });
   }
+
+  // --- Typewriter Effect on Hero ---
+  const heroP = document.querySelector('.hero-inner > p');
+  if (heroP) {
+    const fullText = heroP.textContent;
+    heroP.textContent = '';
+    heroP.style.borderRight = '2px solid var(--blue)';
+    let i = 0;
+    function typeWriter() {
+      if (i < fullText.length) {
+        heroP.textContent += fullText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 25);
+      } else {
+        heroP.style.borderRight = 'none';
+      }
+    }
+    setTimeout(typeWriter, 800);
+  }
+
+  // --- Parallax Scroll on Background Images ---
+  if (window.innerWidth > 768) {
+    const parallaxEls = document.querySelectorAll('.stats-bar[style*="background-image"], .case-hero');
+    if (parallaxEls.length) {
+      window.addEventListener('scroll', () => {
+        parallaxEls.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const speed = 0.3;
+            const yPos = -(rect.top * speed);
+            el.style.backgroundPositionY = yPos + 'px';
+          }
+        });
+      });
+    }
+  }
+
+  // --- Decorative Graphic Elements ---
+  const decorSections = document.querySelectorAll('.section-head');
+  decorSections.forEach((head, i) => {
+    const shapes = document.createElement('div');
+    shapes.className = 'decor-shapes';
+    shapes.innerHTML = i % 2 === 0
+      ? '<svg class="decor-shape decor-circle" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><svg class="decor-shape decor-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>'
+      : '<svg class="decor-shape decor-dots" viewBox="0 0 40 40"><circle cx="8" cy="8" r="3" fill="currentColor"/><circle cx="20" cy="8" r="3" fill="currentColor"/><circle cx="32" cy="8" r="3" fill="currentColor"/></svg><svg class="decor-shape decor-triangle" viewBox="0 0 30 30"><path d="M15 5L28 25H2Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+    head.style.position = 'relative';
+    head.appendChild(shapes);
+  });
 
 });
