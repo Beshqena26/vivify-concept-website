@@ -299,9 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Typewriter Effect on Hero Headlines & Text ---
+  // --- Typewriter Effect on paragraphs only ---
   function typeWrite(el, delay) {
-    const originalHTML = el.innerHTML;
     const fullText = el.textContent;
     el.textContent = '';
     el.style.borderRight = '2px solid var(--blue)';
@@ -310,28 +309,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (i < fullText.length) {
         el.textContent += fullText.charAt(i);
         i++;
-        setTimeout(type, 20);
+        setTimeout(type, 18);
       } else {
         el.style.borderRight = 'none';
-        el.innerHTML = originalHTML;
       }
     }
     setTimeout(type, delay);
   }
 
-  // Homepage hero
-  const heroH1 = document.querySelector('.hero-inner > h1');
+  // Only on paragraphs (no HTML spans to worry about)
   const heroP = document.querySelector('.hero-inner > p');
-  if (heroH1) typeWrite(heroH1, 300);
-  if (heroP) typeWrite(heroP, 1200);
-
-  // All page-head h1s
-  const pageH1 = document.querySelector('.page-head h1');
-  if (pageH1) typeWrite(pageH1, 400);
-
-  // Case study hero h1
-  const caseH1 = document.querySelector('.case-hero-content h1');
-  if (caseH1) typeWrite(caseH1, 400);
+  if (heroP) typeWrite(heroP, 600);
 
   // --- Parallax Scroll on Background Images ---
   if (window.innerWidth > 768) {
