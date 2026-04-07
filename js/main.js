@@ -291,9 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Georgian Uppercase (Mtavruli) ---
-  const geoLower = 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
-  const geoUpper = 'ᲐᲑᲒᲓᲔᲕᲖᲗᲘᲙᲚᲛᲜᲝᲞᲟᲠᲡᲢᲣᲤᲥᲦᲧᲨᲩᲪᲫᲬᲭᲮᲯᲰ';
+  // --- Georgian Uppercase ---
+  // Mersad font supports uppercase via CSS text-transform
+  // Also manually convert as fallback using Asomtavruli (U+10A0) range
+  const geoLower  = 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ';
+  const geoAsomtavruli = 'ႠႡႢႣႤႥႦႧႨႩႪႫႬႭႮႯႰႱႲႳႴႵႶႷႸႹႺႻႼႽႾႿ';
+  const geoMtavruli = 'ᲐᲑᲒᲓᲔᲕᲖᲗᲘᲙᲚᲛᲜᲝᲞᲟᲠᲡᲢᲣᲤᲥᲦᲧᲨᲩᲪᲫᲬᲭᲮᲯᲰ';
   document.querySelectorAll('h1, h2, h3, h4, .nav-links a:not(.btn)').forEach(el => {
     const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
     while (walk.nextNode()) {
@@ -301,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let changed = false;
       for (let i = 0; i < geoLower.length; i++) {
         if (text.includes(geoLower[i])) {
-          text = text.split(geoLower[i]).join(geoUpper[i]);
+          text = text.split(geoLower[i]).join(geoMtavruli[i]);
           changed = true;
         }
       }
