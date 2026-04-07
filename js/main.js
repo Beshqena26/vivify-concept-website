@@ -330,11 +330,12 @@ document.addEventListener('DOMContentLoaded', () => {
     label.classList.add('cursor-label');
     document.body.appendChild(label);
 
+    const isEn = document.documentElement.lang === 'en';
     const labelMap = {
-      '.port-item': 'ნახე პროექტი',
-      '.svc-gradient-card': 'გაიგე მეტი',
-      '.blog-card': 'წაიკითხე',
-      '.case-gallery-img': 'გალერეა',
+      '.port-item': isEn ? 'View Project' : 'ნახე პროექტი',
+      '.svc-gradient-card': isEn ? 'Learn More' : 'გაიგე მეტი',
+      '.blog-card': isEn ? 'Read' : 'წაიკითხე',
+      '.case-gallery-img': isEn ? 'Gallery' : 'გალერეა',
     };
 
     Object.entries(labelMap).forEach(([sel, text]) => {
