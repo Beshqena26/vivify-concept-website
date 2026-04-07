@@ -2684,10 +2684,11 @@ section { padding: 110px 0; position: relative; }
    ===================== */
 
 /* Full-bleed hero */
+/* Case hero — full width with overlay */
 .case-hero {
   width: 100%;
-  aspect-ratio: 16/9;
-  max-height: 500px;
+  aspect-ratio: 2/1;
+  max-height: 520px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -2701,7 +2702,7 @@ section { padding: 110px 0; position: relative; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
 }
 
 .case-hero-content {
@@ -2716,7 +2717,7 @@ section { padding: 110px 0; position: relative; }
 
 .case-hero-content .label { color: var(--white); margin-bottom: 12px; animation: heroFadeBlur 1.2s var(--ease-out) 0.4s both; }
 .case-hero-content .label::before { background: var(--white); }
-.case-hero-content h1 { color: var(--white); margin-bottom: 0; animation: heroFadeBlur 1.4s var(--ease-out) 0.7s both; }
+.case-hero-content h1 { color: var(--white); margin-bottom: 0; animation: heroFadeBlur 1.4s var(--ease-out) 0.7s both; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
 .case-tags { animation: heroFadeBlur 1.2s var(--ease-out) 1s both; }
 
 /* Service tags */
@@ -2731,45 +2732,58 @@ section { padding: 110px 0; position: relative; }
   padding: 6px 16px;
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--white);
+  transition: all 0.3s;
+}
+
+.case-tag:hover {
+  background: rgba(255,255,255,0.3);
 }
 
 /* Project overview grid */
 .case-overview {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 48px;
   align-items: start;
 }
 
 .case-overview h2 { margin-bottom: 16px; }
-.case-overview p { line-height: 1.85; margin-bottom: 16px; }
+.case-overview p { line-height: 1.85; margin-bottom: 16px; color: var(--gray-700); }
 
 /* Project sidebar info */
 .case-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  position: sticky;
+  top: 100px;
 }
 
 .case-detail {
-  padding: 20px;
-  background: var(--gray-50);
-  border-radius: 14px;
+  padding: 22px;
+  background: var(--white);
+  border-radius: var(--radius);
   border: 1px solid var(--gray-200);
+  transition: all 0.3s var(--ease);
+}
+
+.case-detail:hover {
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow-sm);
 }
 
 .case-detail-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--blue);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .case-detail-value {
@@ -2789,7 +2803,7 @@ section { padding: 110px 0; position: relative; }
 }
 
 .case-result {
-  padding: 40px 32px;
+  padding: 44px 32px;
   text-align: center;
   position: relative;
 }
@@ -2798,37 +2812,37 @@ section { padding: 110px 0; position: relative; }
   content: '';
   position: absolute;
   right: 0;
-  top: 25%;
-  bottom: 25%;
+  top: 20%;
+  bottom: 20%;
   width: 1px;
   background: rgba(255,255,255,0.15);
 }
 
 .case-result-num {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 900;
   color: var(--white);
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .case-result-label {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.65);
 }
 
-/* Gallery — masonry-like */
+/* Gallery */
 .case-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 .case-gallery-img {
   aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
-  border-radius: 14px;
+  border-radius: var(--radius);
   transition: all 0.5s var(--ease);
   cursor: pointer;
 }
@@ -2840,7 +2854,7 @@ section { padding: 110px 0; position: relative; }
 
 .case-gallery-img:hover {
   box-shadow: var(--shadow-lg);
-  filter: brightness(1.05);
+  transform: scale(1.02);
 }
 
 /* Project nav */
@@ -2866,16 +2880,19 @@ section { padding: 110px 0; position: relative; }
 
 /* Case study responsive */
 @media (max-width: 768px) {
-  .case-hero { aspect-ratio: 4/3; max-height: 350px; }
-  .case-hero-content { padding: 24px; }
-  .case-hero-content h1 { font-size: 1.6rem !important; }
-  .case-overview { grid-template-columns: 1fr; gap: 32px; }
+  .case-hero { aspect-ratio: 4/3; max-height: 320px; }
+  .case-hero-content { padding: 20px; }
+  .case-hero-content h1 { font-size: 1.4rem !important; text-shadow: 0 1px 10px rgba(0,0,0,0.4); }
+  .case-overview { grid-template-columns: 1fr; gap: 28px; }
+  .case-sidebar { position: static; flex-direction: row; flex-wrap: wrap; gap: 10px; }
+  .case-detail { flex: 1; min-width: 140px; padding: 16px; }
   .case-results { grid-template-columns: 1fr; border-radius: var(--radius-lg); }
   .case-result:not(:last-child)::after { display: none; }
-  .case-result { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .case-gallery { grid-template-columns: 1fr 1fr; }
+  .case-result { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .case-result-num { font-size: 2rem; }
+  .case-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .case-gallery-img:first-child { grid-column: 1 / -1; }
-  .case-tag { font-size: 0.72rem; padding: 5px 12px; }
+  .case-tag { font-size: 0.7rem; padding: 4px 10px; }
   .project-info { grid-template-columns: 1fr; }
   .project-results { grid-template-columns: 1fr; }
   .project-gallery { grid-template-columns: 1fr; }
@@ -3249,7 +3266,7 @@ section + section { position: relative; }
   section { padding: 48px 0; }
   .split-section { gap: 24px; }
   .footer-grid { gap: 24px; }
-  .case-hero { aspect-ratio: 1/1; max-height: 280px; }
+  .case-hero { aspect-ratio: 3/2; max-height: 250px; }
   .case-results { border-radius: var(--radius); }
   .case-result { padding: 20px 16px; }
   .case-result-num { font-size: 1.8rem; }
