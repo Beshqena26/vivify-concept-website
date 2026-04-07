@@ -135,6 +135,28 @@ p {
   background-clip: text;
 }
 
+/* Highlighted text — colored marker behind word */
+.highlight {
+  display: inline;
+  padding: 2px 12px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 6px;
+  -webkit-text-fill-color: var(--white);
+}
+
+.highlight-orange {
+  background: var(--orange);
+}
+
+.highlight-purple {
+  background: var(--purple);
+}
+
+.highlight-green {
+  background: var(--green);
+}
+
 /* =====================
    BUTTONS
    ===================== */
