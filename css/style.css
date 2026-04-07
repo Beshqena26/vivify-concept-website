@@ -57,11 +57,6 @@ html {
 body {
   font-family: 'Plus Jakarta Sans', 'Noto Sans Georgian', -apple-system, sans-serif;
   background: var(--white);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(50,127,252,0.18), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 30%, rgba(124,58,237,0.12), transparent),
-    radial-gradient(ellipse 50% 30% at 0% 60%, rgba(16,185,129,0.10), transparent),
-    radial-gradient(ellipse 70% 40% at 80% 90%, rgba(253,99,25,0.08), transparent);
   color: var(--black);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -634,41 +629,8 @@ section { padding: 110px 0; position: relative; }
   height: 300px;
 }
 
-/* Auto blobs on key sections via pseudo-elements */
+/* Hero overflow */
 .hero { overflow: hidden; }
-
-section:nth-child(odd)::after {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -80px;
-  width: 350px;
-  height: 350px;
-  background: var(--blue);
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-
-section:nth-child(even)::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: -60px;
-  width: 300px;
-  height: 300px;
-  background: var(--purple);
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Make sure content stays above blobs */
-.container { position: relative; z-index: 1; }
 
 .section-head {
   text-align: center;
@@ -1938,6 +1900,76 @@ section:nth-child(even)::after {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
+
+/* =====================
+   ANIMATED BACKGROUND GRADIENTS
+   ===================== */
+
+.bg-gradients {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: blobFloat 20s ease-in-out infinite;
+}
+
+.bg-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: var(--blue);
+  top: -10%;
+  left: -5%;
+  animation-duration: 22s;
+}
+
+.bg-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--purple);
+  top: 30%;
+  right: -10%;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+
+.bg-blob-3 {
+  width: 450px;
+  height: 450px;
+  background: var(--green);
+  bottom: 20%;
+  left: -8%;
+  animation-duration: 25s;
+  animation-delay: -10s;
+}
+
+.bg-blob-4 {
+  width: 400px;
+  height: 400px;
+  background: var(--orange);
+  bottom: -5%;
+  right: 10%;
+  opacity: 0.08;
+  animation-duration: 20s;
+  animation-delay: -15s;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.03); }
+}
 
 /* =====================
    CREATIVE EFFECTS

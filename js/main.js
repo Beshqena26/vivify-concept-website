@@ -4,6 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Animated Background Gradients ---
+  const bgGradients = document.createElement('div');
+  bgGradients.className = 'bg-gradients';
+  bgGradients.innerHTML = '<div class="bg-blob bg-blob-1"></div><div class="bg-blob bg-blob-2"></div><div class="bg-blob bg-blob-3"></div><div class="bg-blob bg-blob-4"></div>';
+  document.body.prepend(bgGradients);
+
   // --- Mobile Nav ---
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
