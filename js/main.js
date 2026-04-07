@@ -10,6 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
   bgGradients.innerHTML = '<div class="bg-blob bg-blob-1"></div><div class="bg-blob bg-blob-2"></div><div class="bg-blob bg-blob-3"></div><div class="bg-blob bg-blob-4"></div>';
   document.body.prepend(bgGradients);
 
+  // --- Floating Shapes ---
+  const shapesContainer = document.createElement('div');
+  shapesContainer.className = 'floating-shapes';
+  const shapes = [
+    { type: 'circle', color: '#327FFC', size: 14, x: 8, y: 15 },
+    { type: 'square', color: '#FD6319', size: 10, x: 85, y: 25 },
+    { type: 'triangle', color: '#7c3aed', size: 16, x: 92, y: 55 },
+    { type: 'circle', color: '#10b981', size: 8, x: 5, y: 65 },
+    { type: 'cross', color: '#327FFC', size: 18, x: 90, y: 10 },
+    { type: 'ring', color: '#FD6319', size: 20, x: 12, y: 85 },
+    { type: 'square', color: '#7c3aed', size: 6, x: 88, y: 80 },
+    { type: 'dot', color: '#10b981', size: 5, x: 6, y: 40 },
+    { type: 'ring', color: '#327FFC', size: 12, x: 94, y: 42 },
+    { type: 'triangle', color: '#FD6319', size: 10, x: 3, y: 92 },
+  ];
+  shapes.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'float-shape float-shape-' + s.type;
+    el.style.cssText = `left:${s.x}%;top:${s.y}%;width:${s.size}px;height:${s.size}px;--color:${s.color};animation-delay:${-(i * 2.3)}s;`;
+    shapesContainer.appendChild(el);
+  });
+  document.body.prepend(shapesContainer);
+
   // --- Mobile Nav ---
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
