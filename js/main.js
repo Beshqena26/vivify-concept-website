@@ -246,16 +246,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Randomize Highlight Colors ---
   const highlightColors = ['#327FFC', '#FD6319', '#7c3aed', '#10b981'];
   const splashRadii = [
-    '4px 18px 6px 16px / 20px 4px 14px 6px',
-    '16px 4px 18px 6px / 6px 14px 4px 20px',
-    '6px 14px 4px 20px / 18px 6px 16px 4px',
-    '20px 6px 14px 4px / 4px 18px 6px 16px',
+    '2px 25px 4px 20px / 25px 2px 18px 3px',
+    '22px 3px 24px 2px / 3px 20px 2px 22px',
+    '3px 20px 2px 24px / 22px 3px 25px 2px',
+    '24px 2px 22px 3px / 2px 25px 3px 20px',
+    '1px 28px 3px 22px / 28px 1px 20px 2px',
+    '18px 2px 26px 1px / 1px 22px 2px 28px',
   ];
   document.querySelectorAll('.highlight, .highlight-orange, .highlight-purple, .highlight-green').forEach(el => {
     const color = highlightColors[Math.floor(Math.random() * highlightColors.length)];
     const radius = splashRadii[Math.floor(Math.random() * splashRadii.length)];
+    const rotation = (Math.random() * 2 - 1).toFixed(1);
     el.style.background = color;
     el.style.borderRadius = radius;
+    el.style.transform = `rotate(${rotation}deg)`;
     el.style.color = '#fff';
     el.style.webkitTextFillColor = '#fff';
   });
