@@ -377,6 +377,42 @@ p {
 
 .dropdown-menu a::after { display: none !important; }
 
+/* Language Switcher */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: var(--gray-500);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s var(--ease);
+  text-decoration: none;
+  display: block;
+}
+
+.lang-btn.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--black);
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
