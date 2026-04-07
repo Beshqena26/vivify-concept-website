@@ -2699,6 +2699,45 @@ section + section { position: relative; }
   /* Partners section */
   .partners-section { padding: 28px 0; }
   .partner-logo { height: 30px; }
+
+  /* --- PERFORMANCE: disable heavy effects on mobile --- */
+
+  /* No blur filter — too heavy for mobile GPU */
+  .anim, .anim-left, .anim-right {
+    filter: none !important;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .anim.show, .anim-left.show, .anim-right.show {
+    filter: none !important;
+  }
+  .anim-scale {
+    filter: none !important;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .anim-scale.show { filter: none !important; }
+
+  /* Fast page entrance — no blur */
+  body { animation: none !important; opacity: 1 !important; }
+
+  /* Simple slide hero animations */
+  .hero-badge { animation: slideDown 0.5s ease 0.05s both !important; filter: none !important; }
+  .hero h1 { animation: slideUp 0.5s ease 0.15s both !important; filter: none !important; }
+  .hero-inner > p { animation: slideUp 0.5s ease 0.25s both !important; filter: none !important; }
+  .hero-btns { animation: slideUp 0.4s ease 0.35s both !important; filter: none !important; }
+  .hero-visual { animation: none !important; opacity: 1 !important; }
+
+  .page-head h1 { animation: slideUp 0.5s ease 0.1s both !important; filter: none !important; }
+  .page-head p { animation: slideUp 0.4s ease 0.2s both !important; filter: none !important; }
+  .page-head .label { animation: slideDown 0.4s ease 0s both !important; filter: none !important; }
+  .page-head .grid-2 { animation: slideUp 0.5s ease 0.1s both !important; filter: none !important; }
+
+  .case-hero-content .label { animation: slideDown 0.4s ease 0.1s both !important; filter: none !important; }
+  .case-hero-content h1 { animation: slideUp 0.5s ease 0.2s both !important; filter: none !important; }
+  .case-tags { animation: slideUp 0.4s ease 0.3s both !important; filter: none !important; }
+
+  /* Hide animated background blobs — save GPU */
+  .bg-gradients { display: none; }
 }
 
 /* =====================
