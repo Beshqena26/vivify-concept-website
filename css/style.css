@@ -1451,7 +1451,7 @@ section { padding: 110px 0; position: relative; }
   display: flex;
   gap: 80px;
   align-items: center;
-  animation: marquee 30s linear infinite;
+  animation: marquee 15s linear infinite;
   will-change: transform;
 }
 
