@@ -597,7 +597,73 @@ p {
    SECTIONS
    ===================== */
 
-section { padding: 110px 0; }
+section { padding: 110px 0; position: relative; }
+
+/* --- Soft background blobs --- */
+.blob-blue,
+.blob-purple,
+.blob-orange {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-blue {
+  background: var(--blue);
+  width: 400px;
+  height: 400px;
+}
+
+.blob-purple {
+  background: var(--purple);
+  width: 350px;
+  height: 350px;
+}
+
+.blob-orange {
+  background: var(--orange);
+  width: 300px;
+  height: 300px;
+}
+
+/* Auto blobs on key sections via pseudo-elements */
+.hero { overflow: hidden; }
+
+section:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 350px;
+  height: 350px;
+  background: var(--blue);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section:nth-child(even)::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  background: var(--purple);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Make sure content stays above blobs */
+.container { position: relative; z-index: 1; }
 
 .section-head {
   text-align: center;
