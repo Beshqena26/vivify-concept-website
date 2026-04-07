@@ -2215,8 +2215,8 @@ section + section { position: relative; }
     justify-content: flex-start;
   }
 
-  .nav-links > a:hover,
-  .nav-links > .nav-dropdown > a:hover {
+  .nav-links > a:active,
+  .nav-links > .nav-dropdown > a:active {
     background: var(--gray-50);
     color: var(--blue);
   }
@@ -2271,7 +2271,7 @@ section + section { position: relative; }
     justify-content: flex-start;
   }
 
-  .dropdown-menu a:hover {
+  .dropdown-menu a:active {
     border-color: var(--blue) !important;
     color: var(--blue) !important;
     background: var(--blue-50) !important;
