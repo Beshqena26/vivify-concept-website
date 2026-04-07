@@ -245,13 +245,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Randomize Highlight Colors ---
   const highlightColors = ['#327FFC', '#FD6319', '#7c3aed', '#10b981'];
+  const splashRadii = [
+    '4px 18px 6px 16px / 20px 4px 14px 6px',
+    '16px 4px 18px 6px / 6px 14px 4px 20px',
+    '6px 14px 4px 20px / 18px 6px 16px 4px',
+    '20px 6px 14px 4px / 4px 18px 6px 16px',
+  ];
   document.querySelectorAll('.highlight, .highlight-orange, .highlight-purple, .highlight-green').forEach(el => {
     const color = highlightColors[Math.floor(Math.random() * highlightColors.length)];
+    const radius = splashRadii[Math.floor(Math.random() * splashRadii.length)];
     el.style.background = color;
+    el.style.borderRadius = radius;
     el.style.color = '#fff';
     el.style.webkitTextFillColor = '#fff';
-    const rotation = (Math.random() * 1.6 - 0.8).toFixed(1);
-    el.style.transform = `rotate(${rotation}deg)`;
   });
 
   // --- Pricing Tabs ---

@@ -137,21 +137,20 @@ p {
   background-clip: text;
 }
 
-/* Highlighted text — colored marker behind word */
+/* Highlighted text — paint splash behind word */
 .highlight {
-  display: inline-block;
-  padding: 6px 22px 10px;
-  margin: 4px 6px;
-  background: var(--blue);
+  display: inline;
+  padding: 2px 8px 6px;
+  margin: 0 2px;
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
-  border-radius: 6px 14px 8px 12px;
-  transform: rotate(-0.8deg);
   position: relative;
-  line-height: 1.25;
+  line-height: 1.4;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  letter-spacing: 0;
+  background: var(--blue);
+  border-radius: 4px 18px 6px 16px / 20px 4px 14px 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .highlight-orange { background: var(--orange); }
